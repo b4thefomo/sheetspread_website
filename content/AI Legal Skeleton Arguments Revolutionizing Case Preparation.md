@@ -1,6 +1,12 @@
 AI Legal Skeleton Arguments Revolutionizing Case Preparation
 
-<a href="https://drive.google.com/uc?export=view&id=1Vm2LOCtDRXc7_F0QKHSd_mZZnZ37gWdo"><img src="https://drive.google.com/uc?export=view&id=1Vm2LOCtDRXc7_F0QKHSd_mZZnZ37gWdo" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+<div style="text-align: center;">
+  <a href="https://drive.google.com/uc?export=view&id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB">
+    <img src="https://drive.google.com/uc?export=view&id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB"
+         style="width: 750px; max-width: 100%; height: 750px;" 
+         title="Click for the larger version." />
+  </a>
+</div>
 
 
 <p><strong>AI-Powered Location Intelligence:</strong> Transforming Geospatial Analysis and Business Decision-Making</p>
