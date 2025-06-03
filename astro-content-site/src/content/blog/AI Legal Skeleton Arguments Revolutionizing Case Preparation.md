@@ -1,3 +1,8 @@
+---
+title: "AI Legal Skeleton Arguments Revolutionizing Case Preparation"
+image: "https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB&sz=w1000"
+---
+
 <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; padding: 2rem 1rem;">
   <!-- Text Hero Section -->
   <div style="max-width: 750px; flex: 1; min-width: 300px;">
@@ -9,11 +14,9 @@
 
   <!-- Image Hero Section -->
   <div style="flex: 1; min-width: 300px; max-width: 750px;">
-    <a href="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB">
-      <img src="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB"
-           style="width: 100%; height: auto; border-radius: 8px;"
-           title="Click for the larger version." />
-    </a>
+<a href="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB&&sz=w1000" target="_blank">
+  <img src="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB&&sz=w1000" alt="Click for the larger version" />
+</a>
   </div>
 </div>
 

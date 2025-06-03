@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { slug } = post; // slug from filename
+
+// 1. Prioritize title from frontmatter
+let title = post.data.title;
+
+// 2. If no frontmatter title, try to parse from <h1> in body
+if (!title) {
+  const contentText = post.body;
+  const titleMatch = contentText.match(/<h1[^>]*>(.*?)<\/h1>/s);
+  if (titleMatch && titleMatch[1]) {
+    title = titleMatch[1].replace(/<br>|<span[^>]*>|<\/span>/g, ' ').trim();
+  }
+}
+
+// 3. If still no title, fall back to slug (as a last resort)
+if (!title) {
+  title = slug;
+}
+
+// Handle image: prioritize frontmatter, then parse from body, then placeholder
+let imgSrc = post.data.image; // Check frontmatter for image
+
+if (!imgSrc) { // If no frontmatter image, try to parse from body
+  const contentText = post.body;
+  const imgMatch = contentText.match(/<img[^>]*src="([^"]*)"[^>]*>/);
+  if (imgMatch && imgMatch[1]) {
+    imgSrc = imgMatch[1];
+  }
+}
+
+if (!imgSrc) { // If still no image, use placeholder
+  imgSrc = '/placeholder-image.jpg';
+}
+---
+
+<article class="content-card h-full flex flex-col">
+  <a href={`/blog/${slug}`} class="block">
+    <div class="relative">
+      <img 
+        src={imgSrc} 
+        alt={title} 
+        class="w-full h-48 object-cover"
+        onerror="this.onerror=null;this.src='/placeholder-image.jpg';"
+      />
+    </div>
+    <div class="p-4 flex-grow">
+      <h2 class="text-xl font-semibold mb-2 line-clamp-2">{title}</h2>
+      <div class="mt-auto pt-2">
+        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Read more</span>
+      </div>
+    </div>
+  </a>
+</article>

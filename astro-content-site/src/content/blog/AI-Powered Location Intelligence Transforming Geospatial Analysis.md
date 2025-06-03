@@ -1,8 +1,3 @@
----
-title: "AI-Powered Location Intelligence Transforming Geospatial Analysis"
-image: "https://drive.google.com/uc?export=view&id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB"
----
-
 AI-Powered Location Intelligence Transforming Geospatial Analysis
 
 
