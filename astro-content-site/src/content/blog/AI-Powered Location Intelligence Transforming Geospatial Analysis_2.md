@@ -1,3 +1,10 @@
+---
+title: "AI-Powered Location Intelligence Transforming Geospatial Analysis"
+image: "https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB&&sz=w1000"
+description: "How AI-powered location intelligence is revolutionizing geospatial analysis and business decision-making"
+pubDate: 2025-06-03
+---
+
 AI-Powered Location Intelligence Transforming Geospatial Analysis
 
 <div style="text-align: center;">
