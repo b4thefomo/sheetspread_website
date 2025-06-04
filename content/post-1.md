@@ -1,6 +1,6 @@
 AI-Powered Location Intelligence Transforming Geospatial Analysis
 
-<a href="https://drive.google.com/uc?export=view&id=1i2sMlUtO7i8RkAepEhpf6BGMLyIaAO8Y"><img src="https://drive.google.com/uc?export=view&id=1i2sMlUtO7i8RkAepEhpf6BGMLyIaAO8Y" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+<img src="/public/post-1.jpeg" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." />
 
 <h2>Understanding AI-Powered Location Intelligence and Its Role in Geospatial Analysis</h2>
 <p><strong>AI-powered location intelligence</strong> is transforming how businesses interpret geographic data, combining artificial intelligence with geospatial analytics to extract richer insights from location-based information. This integration allows for more precise pattern recognition, predictive modeling, and real-time decision-making across various industries. By enhancing the depth and speed of geospatial analysis, AI enables organizations to unlock the full potential of their spatial data.</p>
