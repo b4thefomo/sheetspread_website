@@ -9,11 +9,11 @@
 
   <!-- Image Hero Section -->
   <div style="flex: 1; min-width: 300px; max-width: 750px;">
-    <a href="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB">
-      <img src="https://drive.google.com/thumbnail?id=1SN_uUrYXEafgZysjaDtzTQsFitI7jigB"
+    
+      <img src="public/images"
            style="width: 100%; height: auto; border-radius: 8px;"
            title="Click for the larger version." />
-    </a>
+  
   </div>
 </div>
 
