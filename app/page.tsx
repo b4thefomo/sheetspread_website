@@ -15,8 +15,17 @@ export default function Home() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">SailsMaps Blog</h1>
-          <p className="text-gray-600 mt-2">AI-Powered Location Intelligence Insights</p>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">SailsMaps Blog</h1>
+              <p className="text-gray-600 mt-2">AI-Powered Location Intelligence Insights</p>
+            </div>
+            <nav>
+              <Link href="/resources" className="text-blue-600 hover:text-blue-800 font-medium">
+                Resources
+              </Link>
+            </nav>
+          </div>
         </div>
       </header>
 

@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from '../../../lib/posts'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { renderPostWithCTA } from '@/lib/renderPostWithCTA'
 
 interface PostPageProps {
   params: {
@@ -53,10 +54,9 @@ export default function PostPage({ params }: PostPageProps) {
               {post.title}
             </h1>
             
-            <div 
-              className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              {renderPostWithCTA(post.content, params.slug)}
+            </div>
           </div>
         </article>
 

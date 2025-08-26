@@ -46,5 +46,6 @@
   <li><b>Visibility:</b> Publish a simple dashboard: open changes by phase, average cycle time, cumulative cost/schedule impact, and top blockers. Transparency reduces friction.</li>
 </ul>
 
+
 <p><b>Conclusion</b></p>
 <p>Effective change order management is a core project management competency. Diagnose causes, run a lean intake-to-close process, quantify scope-schedule-cost impacts, and align stakeholders through clear communication and airtight documentation. With governance, metrics, and negotiation discipline, changes become controlled investments rather than surprises—protecting margins, timelines, and trust while delivering the right value at the right time, consistently, for clients and teams.</p>
