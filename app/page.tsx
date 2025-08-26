@@ -45,10 +45,9 @@ export default function Home() {
                   <h2 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
                     {post.title}
                   </h2>
-                    <div
-                      className="text-gray-600 text-sm leading-relaxed space-y-4"
-                      dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                    />
+                    <p className="text-gray-600 text-sm leading-relaxed space-y-4">
+                      {post.excerpt}
+                    </p>
                   <div className="mt-4">
                     <span className="text-blue-600 text-sm font-medium group-hover:text-blue-800">
                       Read more →
