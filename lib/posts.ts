@@ -28,7 +28,13 @@ export function getAllPosts(): Post[] {
       // Split content to get title and body
       const lines = fileContents.split('\n')
       const title = lines[0].trim()
-      const content = lines.slice(1).join('\n').trim()
+      // Skip the first line (title) and any empty lines immediately after it
+      let startIndex = 1;
+      while (startIndex < lines.length && lines[startIndex].trim() === '') {
+        startIndex++;
+      }
+      // Join remaining lines preserving original spacing
+      const content = lines.slice(startIndex).join('\n')
       
       const slug = name.replace(/\.md$/, '')
       const excerpt = extractExcerpt(content)

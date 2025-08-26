@@ -1,4 +1,4 @@
-// File: /Users/gbade/Desktop/sailsmaps_repo/v2/sailsmaps/app/page.tsx
+// File: /Users/gbade/Desktop/sailsmaps_application/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
