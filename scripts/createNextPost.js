@@ -47,6 +47,8 @@ async function createNextPost() {
     - Use <p><b>Section Headings</b></p> for main sections
     - Use HTML <p>, <ul>, <li>, <b>, <i> tags throughout (no markdown)
     - Include 6-8 main sections with practical, actionable content
+    - Add 3 resource placeholders throughout the content: {{RESOURCE_PLACEHOLDER_1}}, {{RESOURCE_PLACEHOLDER_2}}, {{RESOURCE_PLACEHOLDER_3}}
+    - Add internal linking placeholders: {{INTERNAL_LINK_1}}, {{INTERNAL_LINK_2}}
     - End with a <p><b>Conclusion</b></p> section
     - Write in professional, authoritative tone
     - Include specific examples, tips, and best practices
@@ -120,6 +122,11 @@ async function createNextPost() {
     
     fs.writeFileSync('./content-calendar.json', JSON.stringify(updatedCalendar, null, 2));
     console.log(`✅ Content calendar updated - ${nextPost.id} marked as Done`);
+
+    // Run post-processing for internal linking and resources
+    console.log('\n🔄 Running post-processing...');
+    const { postProcessBlog } = require('./postProcessBlog');
+    await postProcessBlog(nextPost.id);
 
     console.log('\n🎉 Post creation complete!');
     console.log(`   Blog: content/${nextPost.id}.md`);
