@@ -1,17 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   experimental: {
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/@swc/core-linux-x64-gnu',
-        'node_modules/@swc/core-linux-x64-musl',
-        'node_modules/@esbuild/linux-x64',
-        '.next/cache/**/*',
-      ],
-    },
+    outputFileTracing: false,
   },
   webpack: (config, { isServer }) => {
-    // Fix for build traces issue
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
