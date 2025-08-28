@@ -36,11 +36,11 @@ async function generateSingleImage() {
     
     // Create playful, simple prompt based on title
     const prompt = `Cartoon illustration with thick black outlines, flat vibrant colors. ${testPost.title}. 
-    Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
-    Character holding a magnifying glass and documents labeled "CHANGE ORDER" and "CONTRACT". 
-    Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
+    Style: Simple cartoon character with exaggerated features, round eyes, big smile. 
+    Character should reflect the topic. 
+    Background: Solid bright green or blue. Floating elements that match the topic/industry being discussed, 
     checklist icons, warning triangles, sparkles, and motion lines. 
-    Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
+    Bold flat colors: yellow, orange, pink, purple, blue, red. No gradients, no shadows. 
     Style similar to modern editorial illustrations, playful and approachable. NO TITLE TEXT OR WORDS IN THE IMAGE.`;
 
     console.log(`\n🎨 Prompt: ${prompt.slice(0, 150)}...\n`);
@@ -58,7 +58,7 @@ async function generateSingleImage() {
       const imgBytes = generatedImage.image.imageBytes;
       const buffer = Buffer.from(imgBytes, "base64");
       
-      const fileName = `${testPost.id}.png`;
+      const fileName = `${testPost.id}.jpeg`;
       const filePath = path.join('./public', fileName);
       
       fs.writeFileSync(filePath, buffer);

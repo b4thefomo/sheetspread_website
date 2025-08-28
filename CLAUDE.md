@@ -64,3 +64,6 @@ The blog covers AI-powered location intelligence topics including:
 - Post slugs are derived from the markdown filename
 - Images for posts should be placed in `/public` with matching slug names (e.g., `post-1.jpeg`)
 - The application extracts the first 200 characters of content as post excerpts
+
+
+

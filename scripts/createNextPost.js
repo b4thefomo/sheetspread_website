@@ -42,7 +42,6 @@ async function createNextPost() {
 
     Format requirements:
     - Start with the title as plain text (no markdown heading)
-    - Include an image tag: <img src="/public/${nextPost.id}.png" style="width: 500px; max-width: 100%; height: auto" />
     - Add two blank lines after the image
     - Start with an italicized introduction paragraph in <p><i>...</i></p> tags
     - Use <p><b>Section Headings</b></p> for main sections
@@ -94,7 +93,7 @@ async function createNextPost() {
         const imgBytes = generatedImage.image.imageBytes;
         const buffer = Buffer.from(imgBytes, "base64");
         
-        const fileName = `${nextPost.id}.png`;
+        const fileName = `${nextPost.id}.jpeg`;
         const filePath = path.join('./public', fileName);
         
         fs.writeFileSync(filePath, buffer);
@@ -124,7 +123,7 @@ async function createNextPost() {
 
     console.log('\n🎉 Post creation complete!');
     console.log(`   Blog: content/${nextPost.id}.md`);
-    console.log(`   Image: public/${nextPost.id}.png`);
+    console.log(`   Image: public/${nextPost.id}.jpeg`);
     console.log(`   Status: Updated in content-calendar.json`);
     
   } catch (error) {

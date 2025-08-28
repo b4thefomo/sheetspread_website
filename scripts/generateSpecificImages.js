@@ -65,7 +65,7 @@ async function generateImagesForPosts(postIds) {
           const imgBytes = generatedImage.image.imageBytes;
           const buffer = Buffer.from(imgBytes, "base64");
           
-          const fileName = `${post.id}.png`;
+          const fileName = `${post.id}.jpeg`;
           const filePath = path.join('./public', fileName);
           
           fs.writeFileSync(filePath, buffer);

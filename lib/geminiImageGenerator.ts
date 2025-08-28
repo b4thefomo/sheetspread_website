@@ -60,7 +60,7 @@ class GeminiImageGenerator {
         const imgBytes = generatedImage.image.imageBytes;
         const buffer = Buffer.from(imgBytes, "base64");
         
-        const fileName = `${post.id}.png`;
+        const fileName = `${post.id}.jpeg`;
         const filePath = path.join(outputDir, fileName);
         
         fs.writeFileSync(filePath, buffer);
