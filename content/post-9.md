@@ -1,6 +1,5 @@
 7 tips from suppliers about change orders
 
-<img src="/public/post-9.jpeg" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." />
 
 
 <p><i>Change orders can strain margins, timelines, and relationships—especially for suppliers. In this article, we unpack change order management from a supplier’s perspective: why changes happen, how to triage and price them, how to communicate and document effectively, and which metrics sharpen performance. By the end, you’ll have a practical playbook to protect profitability while strengthening customer trust.</i></p>

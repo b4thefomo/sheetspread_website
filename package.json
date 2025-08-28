@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "create-post": "node scripts/createNextPost.js",
+    "generate-image": "node scripts/generateImage.js",
+    "generate-specific": "node scripts/generateSpecificImages.js"
   },
   "dependencies": {
     "@google/genai": "^1.16.0",

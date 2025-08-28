@@ -1,6 +1,5 @@
 7 tips from procurement about change orders
 
-<img src="/public/post-11.png" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." />
 
 
 <p><i>Change orders can strain budgets, vendor relationships, and procurement cycles—especially when they arrive without warning. In this article, we dive into change order management from a procurement perspective: why they happen, how to structure contracts to handle them, pricing strategies that protect margins, communication protocols that maintain vendor relationships, and metrics that drive continuous improvement. By the end, you'll have a practical playbook to turn change order chaos into controlled, strategic procurement decisions.</i></p>

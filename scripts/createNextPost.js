@@ -1,0 +1,133 @@
+const { GoogleGenAI } = require("@google/genai");
+const fs = require("node:fs");
+const path = require("path");
+require('dotenv').config();
+
+async function createNextPost() {
+  try {
+    console.log('🚀 Starting automated post creation...\n');
+    
+    // Check if API key is set
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey || apiKey === 'your_gemini_api_key_here') {
+      console.error('⚠️  Please set your GEMINI_API_KEY in .env file');
+      console.log('Get your API key from: https://aistudio.google.com/app/apikey');
+      return;
+    }
+
+    // Read content calendar
+    const contentData = fs.readFileSync('./content-calendar.json', 'utf-8');
+    const calendar = JSON.parse(contentData);
+    
+    // Find next post to create (first one without "Done" status)
+    const nextPost = calendar.posts.find(post => !post.status || post.status !== 'Done');
+    
+    if (!nextPost) {
+      console.log('✅ All posts in the content calendar are complete!');
+      return;
+    }
+
+    console.log(`📝 Creating next post: ${nextPost.title}`);
+    console.log(`   ID: ${nextPost.id}`);
+    console.log(`   Perspective: ${nextPost.perspective || 'general'}\n`);
+
+    // Generate blog content using Gemini
+    const ai = new GoogleGenAI({ apiKey: apiKey });
+    const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
+    console.log('✍️  Generating blog content...');
+    
+    const contentPrompt = `Write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective. 
+
+    Format requirements:
+    - Start with the title as plain text (no markdown heading)
+    - Include an image tag: <img src="/public/${nextPost.id}.png" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." />
+    - Add two blank lines after the image
+    - Start with an italicized introduction paragraph in <p><i>...</i></p> tags
+    - Use <p><b>Section Headings</b></p> for main sections
+    - Use HTML <p>, <ul>, <li>, <b>, <i> tags throughout (no markdown)
+    - Include 6-8 main sections with practical, actionable content
+    - End with a <p><b>Conclusion</b></p> section
+    - Write in professional, authoritative tone
+    - Include specific examples, tips, and best practices
+    - Make it comprehensive (2000+ words)
+    
+    Topic: ${nextPost.title}
+    Perspective: ${nextPost.perspective || 'general'}
+    
+    Write the complete blog post now:`;
+
+    const contentResult = await model.generateContent(contentPrompt);
+    const blogContent = contentResult.response.text();
+
+    // Save markdown file
+    const markdownPath = `./content/${nextPost.id}.md`;
+    fs.writeFileSync(markdownPath, blogContent);
+    console.log(`✅ Blog post saved to ${markdownPath}`);
+
+    // Generate image
+    console.log('\n🎨 Generating image...');
+    
+    const prompt = `Cartoon illustration with thick black outlines, flat vibrant colors. ${nextPost.title}. 
+    Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
+    Character holding a magnifying glass and documents labeled "CHANGE ORDER" and "CONTRACT". 
+    Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
+    checklist icons, warning triangles, sparkles, and motion lines. 
+    Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
+    Style similar to modern editorial illustrations, playful and approachable. NO TITLE TEXT OR WORDS IN THE IMAGE.`;
+
+    const imageResponse = await ai.models.generateImages({
+      model: 'imagen-4.0-generate-001',
+      prompt: prompt,
+      config: {
+        numberOfImages: 1,
+      },
+    });
+
+    if (imageResponse.generatedImages && imageResponse.generatedImages.length > 0) {
+      const generatedImage = imageResponse.generatedImages[0];
+      if (!generatedImage.image || !generatedImage.image.imageBytes) {
+        console.log(`⚠️ No image data for ${nextPost.id}`);
+      } else {
+        const imgBytes = generatedImage.image.imageBytes;
+        const buffer = Buffer.from(imgBytes, "base64");
+        
+        const fileName = `${nextPost.id}.png`;
+        const filePath = path.join('./public', fileName);
+        
+        fs.writeFileSync(filePath, buffer);
+        
+        const stats = fs.statSync(filePath);
+        console.log(`✅ Image saved to ${filePath}`);
+        console.log(`   Size: ${(stats.size / 1024).toFixed(2)} KB`);
+      }
+    } else {
+      console.log(`⚠️ No image was generated for ${nextPost.id}`);
+    }
+
+    // Update content calendar to mark as Done
+    console.log('\n📅 Updating content calendar...');
+    
+    const updatedCalendar = {
+      ...calendar,
+      posts: calendar.posts.map(post => 
+        post.id === nextPost.id 
+          ? { ...post, status: 'Done' }
+          : post
+      )
+    };
+    
+    fs.writeFileSync('./content-calendar.json', JSON.stringify(updatedCalendar, null, 2));
+    console.log(`✅ Content calendar updated - ${nextPost.id} marked as Done`);
+
+    console.log('\n🎉 Post creation complete!');
+    console.log(`   Blog: content/${nextPost.id}.md`);
+    console.log(`   Image: public/${nextPost.id}.png`);
+    console.log(`   Status: Updated in content-calendar.json`);
+    
+  } catch (error) {
+    console.error('❌ Error creating post:', error.message || error);
+  }
+}
+
+createNextPost();
