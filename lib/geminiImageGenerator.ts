@@ -28,13 +28,14 @@ class GeminiImageGenerator {
   }
 
   private createImagePrompt(post: BlogPost): string {
-    return `Cartoon illustration with thick black outlines, flat vibrant colors. ${post.title}. 
+    return `Cartoon illustration with thick black outlines and flat vibrant colors. 
     Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
     Character holding a magnifying glass and documents. 
-    Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
-    checklist icons, warning triangles, sparkles, and motion lines. 
+    Background: Solid bright green or blue. 
+    Floating elements: dollar signs, clocks, gears, construction crane, checklist icons, warning triangles, sparkles, and motion lines. 
     Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
-    Style similar to modern editorial illustrations, playful and approachable. No text or words in the image.`;
+    Style similar to modern editorial illustrations, playful and approachable. 
+    STRICT REQUIREMENT: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO NUMBERS anywhere in the image.`;
   }
 
   async generateImage(post: BlogPost, outputDir: string = './public'): Promise<string | null> {
@@ -60,10 +61,16 @@ class GeminiImageGenerator {
         const imgBytes = generatedImage.image.imageBytes;
         const buffer = Buffer.from(imgBytes, "base64");
         
+        // Convert to JPEG using Sharp to ensure proper format
+        const sharp = require('sharp');
+        const jpegBuffer = await sharp(buffer)
+          .jpeg({ quality: 85 })
+          .toBuffer();
+        
         const fileName = `${post.id}.jpeg`;
         const filePath = path.join(outputDir, fileName);
         
-        fs.writeFileSync(filePath, buffer);
+        fs.writeFileSync(filePath, jpegBuffer);
         console.log(`✅ Image saved to ${filePath}`);
         
         return fileName;

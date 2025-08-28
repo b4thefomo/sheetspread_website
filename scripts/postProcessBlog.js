@@ -28,6 +28,9 @@ async function postProcessBlog(postId) {
     // Replace internal link placeholders  
     content = replaceInternalLinkPlaceholders(content, otherPosts);
     
+    // Fix any incorrect image references
+    content = fixImageReferences(content, postId);
+    
     // Save processed content
     fs.writeFileSync(filePath, content);
     console.log(`\n✅ Post-processing complete for ${postId}`);
@@ -148,6 +151,43 @@ function replaceInternalLinkPlaceholders(content, otherPosts) {
       console.log(`   ✅ Replaced ${template.placeholder} with link to ${otherPosts[index].title}`);
     }
   });
+  
+  return content;
+}
+
+function fixImageReferences(content, postId) {
+  console.log('\n🖼️  Fixing image references...');
+  
+  const correctImageTag = `<img src="/public/${postId}.jpeg" style="width: 500px; max-width: 100%; height: auto" />`;
+  
+  // Replace various possible incorrect image tags
+  const incorrectPatterns = [
+    /<img src="placeholder_image\.[^"]*"[^>]*>/gi,
+    /<img src="[^"]*placeholder[^"]*"[^>]*>/gi,
+    /<img[^>]*alt="[^"]*"[^>]*>/gi,
+  ];
+  
+  let fixed = false;
+  incorrectPatterns.forEach(pattern => {
+    if (pattern.test(content)) {
+      content = content.replace(pattern, correctImageTag);
+      fixed = true;
+    }
+  });
+  
+  // Also ensure the image tag is on line 3 if it's missing
+  const lines = content.split('\n');
+  if (lines.length > 2 && !lines[2].includes('<img')) {
+    lines.splice(2, 0, '', correctImageTag, '');
+    content = lines.join('\n');
+    fixed = true;
+  }
+  
+  if (fixed) {
+    console.log(`   ✅ Fixed image reference to use ${postId}.jpeg`);
+  } else {
+    console.log(`   ✅ Image reference already correct`);
+  }
   
   return content;
 }

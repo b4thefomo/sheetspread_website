@@ -36,13 +36,14 @@ async function generateImagesForPosts(postIds) {
       console.log(`   Perspective: ${post.perspective || 'general'}`);
       
       // Create playful, simple prompt based on title
-      const prompt = `Cartoon illustration with thick black outlines, flat vibrant colors. ${post.title}. 
+      const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors. 
       Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
       Character holding a magnifying glass and documents. 
-      Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
-      checklist icons, warning triangles, sparkles, and motion lines. 
+      Background: Solid bright green or blue. 
+      Floating elements: dollar signs, clocks, gears, construction crane, checklist icons, warning triangles, sparkles, and motion lines. 
       Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
-      Style similar to modern editorial illustrations, playful and approachable. No text or words in the image.`;
+      Style similar to modern editorial illustrations, playful and approachable. 
+      MANDATORY: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO NUMBERS anywhere in the image.`;
 
       console.log(`\n🎨 Generating image...\n`);
 
@@ -65,10 +66,16 @@ async function generateImagesForPosts(postIds) {
           const imgBytes = generatedImage.image.imageBytes;
           const buffer = Buffer.from(imgBytes, "base64");
           
+          // Convert to JPEG using Sharp to ensure proper format
+          const sharp = require('sharp');
+          const jpegBuffer = await sharp(buffer)
+            .jpeg({ quality: 85 })
+            .toBuffer();
+          
           const fileName = `${post.id}.jpeg`;
           const filePath = path.join('./public', fileName);
           
-          fs.writeFileSync(filePath, buffer);
+          fs.writeFileSync(filePath, jpegBuffer);
           
           const stats = fs.statSync(filePath);
           console.log(`✅ Image saved successfully!`);

@@ -42,6 +42,7 @@ async function createNextPost() {
 
     Format requirements:
     - Start with the title as plain text (no markdown heading)
+    - MUST include this exact image tag on line 3: <img src="/public/${nextPost.id}.jpeg" style="width: 500px; max-width: 100%; height: auto" />
     - Add two blank lines after the image
     - Start with an italicized introduction paragraph in <p><i>...</i></p> tags
     - Use <p><b>Section Headings</b></p> for main sections
@@ -70,13 +71,14 @@ async function createNextPost() {
     // Generate image
     console.log('\n🎨 Generating image...');
     
-    const prompt = `Cartoon illustration with thick black outlines, flat vibrant colors. ${nextPost.title}. 
+    const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors. 
     Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
-    Character holding a magnifying glass and documents labeled "CHANGE ORDER" and "CONTRACT". 
-    Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
-    checklist icons, warning triangles, sparkles, and motion lines. 
+    Character holding a magnifying glass examining documents. 
+    Background: Solid bright green or blue. 
+    Floating elements: dollar signs, clocks, gears, construction crane, checklist icons, warning triangles, sparkles, and motion lines. 
     Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
-    Style similar to modern editorial illustrations, playful and approachable. NO TITLE TEXT OR WORDS IN THE IMAGE.`;
+    Style similar to modern editorial illustrations, playful and approachable. 
+    IMPORTANT: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO TITLES, NO NUMBERS anywhere in the image.`;
 
     const ai = new GoogleGenAI({ apiKey: apiKey });
     const imageResponse = await ai.models.generateImages({
@@ -95,10 +97,16 @@ async function createNextPost() {
         const imgBytes = generatedImage.image.imageBytes;
         const buffer = Buffer.from(imgBytes, "base64");
         
+        // Convert to JPEG using Sharp to ensure proper format
+        const sharp = require('sharp');
+        const jpegBuffer = await sharp(buffer)
+          .jpeg({ quality: 85 })
+          .toBuffer();
+        
         const fileName = `${nextPost.id}.jpeg`;
         const filePath = path.join('./public', fileName);
         
-        fs.writeFileSync(filePath, buffer);
+        fs.writeFileSync(filePath, jpegBuffer);
         
         const stats = fs.statSync(filePath);
         console.log(`✅ Image saved to ${filePath}`);
