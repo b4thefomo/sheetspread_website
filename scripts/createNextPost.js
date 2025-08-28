@@ -32,8 +32,9 @@ async function createNextPost() {
     console.log(`   Perspective: ${nextPost.perspective || 'general'}\n`);
 
     // Generate blog content using Gemini
-    const ai = new GoogleGenAI({ apiKey: apiKey });
-    const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const { GoogleGenerativeAI } = require('@google/generative-ai');
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     console.log('✍️  Generating blog content...');
     
@@ -41,7 +42,7 @@ async function createNextPost() {
 
     Format requirements:
     - Start with the title as plain text (no markdown heading)
-    - Include an image tag: <img src="/public/${nextPost.id}.png" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." />
+    - Include an image tag: <img src="/public/${nextPost.id}.png" style="width: 500px; max-width: 100%; height: auto" />
     - Add two blank lines after the image
     - Start with an italicized introduction paragraph in <p><i>...</i></p> tags
     - Use <p><b>Section Headings</b></p> for main sections
@@ -76,6 +77,7 @@ async function createNextPost() {
     Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
     Style similar to modern editorial illustrations, playful and approachable. NO TITLE TEXT OR WORDS IN THE IMAGE.`;
 
+    const ai = new GoogleGenAI({ apiKey: apiKey });
     const imageResponse = await ai.models.generateImages({
       model: 'imagen-4.0-generate-001',
       prompt: prompt,
