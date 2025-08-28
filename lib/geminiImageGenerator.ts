@@ -53,6 +53,10 @@ class GeminiImageGenerator {
 
       if (response.generatedImages && response.generatedImages.length > 0) {
         const generatedImage = response.generatedImages[0];
+        if (!generatedImage.image || !generatedImage.image.imageBytes) {
+          console.log(`⚠️ No image data for ${post.id}`);
+          return null;
+        }
         const imgBytes = generatedImage.image.imageBytes;
         const buffer = Buffer.from(imgBytes, "base64");
         
