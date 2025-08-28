@@ -41,7 +41,7 @@ async function generateSingleImage() {
     Background: Solid bright green or blue. Floating elements: dollar signs, clocks, gears, construction crane, 
     checklist icons, warning triangles, sparkles, and motion lines. 
     Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
-    Style similar to modern editorial illustrations, playful and approachable. No text or words in the image.`;
+    Style similar to modern editorial illustrations, playful and approachable. NO TITLE TEXT OR WORDS IN THE IMAGE.`;
 
     console.log(`\n🎨 Prompt: ${prompt.slice(0, 150)}...\n`);
 
