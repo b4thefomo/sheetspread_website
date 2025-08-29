@@ -9,7 +9,8 @@
       "metaTitle": "one person unicorn and what industry it could be in",
       "metaDescription": "one person unicorn and what industry it could be in",
       "perspective": "project manager",
-      "status": "Done"
+      "status": "Done",
+      "summary": "Written from a project manager's perspective, this post provides 7 actionable tips for handling change orders effectively. It covers proactive planning, clear documentation requirements, communication strategies with stakeholders, and practical tools for tracking changes. The article emphasizes preventing scope creep, maintaining project timelines, and protecting profit margins through structured change management processes. Includes real-world examples and a downloadable change order template."
     },
     {
       "id": "post-9",
@@ -20,7 +21,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "supplier",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This post presents change order management from the supplier's viewpoint, offering 7 strategic tips for protecting margins and maintaining client relationships. It addresses pricing strategies, documentation best practices, negotiation tactics, and how to handle rush orders without sacrificing profitability. The content covers contractual protections, payment terms, and dispute avoidance while providing practical guidance on cost recovery and markup justification."
     },
     {
       "id": "post-10",
@@ -31,7 +33,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "client",
-      "status": "Done"
+      "status": "Done",
+      "summary": "Focused on the client/owner perspective, this comprehensive guide provides 7 essential tips for controlling change order costs and maintaining project value. It covers contract structuring, approval workflows, independent cost verification, and negotiation strategies. The post emphasizes transparency, documentation requirements, and governance structures that protect client interests while maintaining fair contractor relationships. Includes a free industry research PDF on change order trends."
     },
     {
       "id": "post-11",
@@ -42,7 +45,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "procurement",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This article tackles change order management through the procurement lens, offering 7 tips for maintaining cost control and vendor compliance. It covers competitive pricing validation, contract amendment procedures, supplier performance tracking, and risk mitigation strategies. The post addresses multi-tier markup management, unit rate agreements, and procurement's role in dispute resolution. Includes practical frameworks for change order evaluation and approval."
     },
     {
       "id": "post-12",
@@ -53,7 +57,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This foundational post explains why change orders can determine project success or failure, covering both financial and relationship impacts. It addresses the cascade effects of poor change management, including budget overruns, schedule delays, and stakeholder disputes. The article provides frameworks for establishing robust change control processes and metrics for measuring effectiveness. Includes a free insights report and interactive quiz for assessing organizational change management maturity."
     },
     {
       "id": "post-13",
@@ -64,7 +69,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This strategic post explores the inevitability of change orders in complex projects, helping teams shift from reactive to proactive management. It covers the psychological and organizational factors that make changes unavoidable, including evolving requirements, market dynamics, and stakeholder learning curves. The article provides frameworks for anticipating and budgeting for changes, establishing governance structures, and creating a culture that views changes as opportunities rather than failures."
     },
     {
       "id": "post-14",
@@ -75,7 +81,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This analytical post identifies and categorizes the most common triggers for change orders, providing early warning systems for each type. It covers design omissions, site conditions, regulatory changes, stakeholder requests, and market factors. The article includes statistical data on change frequency by trigger type, prevention strategies, and contingency planning approaches. Features predictive models and checklists for anticipating changes during project planning phases."
     },
     {
       "id": "post-15",
@@ -86,7 +93,8 @@
       "metaTitle": "",
       "metaDescription": "",
       "perspective": "",
-      "status": "Done"
+      "status": "Done",
+      "summary": "This eye-opening post quantifies the true costs of poorly managed change orders beyond direct expenses. It covers hidden impacts like productivity loss, administrative burden, opportunity costs, relationship damage, and litigation risks. The article presents cost models showing how a $10K change can balloon to $50K in total impact when indirect costs are considered. Includes ROI calculations for investing in proper change management systems and processes."
     },
     {
       "id": "post-16",
@@ -395,6 +403,18 @@
       "metaDescription": "",
       "perspective": "",
       "status": ""
+    },
+    {
+      "id": "post-44",
+      "post": "",
+      "prompt": "Generate a blog post about The Hidden P&L Impact of Change Orders: GAAP Compliance, Revenue Recognition, and Why Your CFO Needs to Care [+Free Accounting Checklist]",
+      "title": "The Hidden P&L Impact of Change Orders: GAAP Compliance, Revenue Recognition, and Why Your CFO Needs to Care",
+      "url": "",
+      "metaTitle": "Change Order Accounting: GAAP Compliance & P&L Impact Guide",
+      "metaDescription": "Master change order accounting with our guide to GAAP compliance, revenue recognition timing, percentage of completion accounting, and P&L impact management.",
+      "perspective": "finance/accounting",
+      "status": "",
+      "summary": "This post targets CFOs, Controllers, and Finance Directors who need to understand the accounting complexities of change orders. It covers critical GAAP compliance issues including ASC 606 revenue recognition for contract modifications, percentage of completion accounting adjustments, and timing differences that can materially impact financial statements. The article will explain WIP reporting challenges, earned value management, cost accrual timing, and proper documentation for audit trails. It addresses common pitfalls like premature revenue recognition, unrecorded liabilities, and margin erosion from unpriced change orders. The content includes practical examples of journal entries, disclosure requirements, and internal controls. A free downloadable checklist helps finance teams ensure proper change order accounting treatment and compliance with both GAAP and internal reporting requirements."
     }
   ]
 }
