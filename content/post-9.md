@@ -69,6 +69,18 @@
 <p>Finally, maintain a playbook: templates for intake, impact analysis, quotes, and effectivity plans; RACI for who approves what; and negotiation guardrails. Train customer-facing teams to articulate operational constraints in business terms, not jargon, so buyers can sell solutions internally.</p>
 
 
+
+
+<p><b>Related Articles</b></p>
+
+<ul>
+<li><a href="/posts/post-8">7 tips from project managers about change orders</a></li>
+<li><a href="/posts/post-10">7 tips from clients about change orders</a></li>
+<li><a href="/posts/post-11">7 tips from procurements about change orders</a></li>
+</ul>
+
+<p><i>Want more insights on change order management? <a href="/resources">Download our free Change Order Management toolkit</a> with templates, checklists, and best practices from industry experts.</i></p>
+
 <p><b>Conclusion</b></p>
 
 <p>Effective change order management is a strategic capability for suppliers. By formalizing intake, triage, pricing, documentation, and KPIs, suppliers turn disruptive requests into value-preserving decisions. Clear assumptions, digital workflows, and option-based negotiations protect margin, accelerate approvals, and strengthen trust. Treat change orders as a repeatable process—not an exception—and you'll ship the right rev, on time, at a fair profit.</p>

@@ -84,6 +84,18 @@ The Hidden Costs of Unmanaged Change Orders [+Free Insights Report and Quiz]
 <p>To further assist you in mastering change management, we’ve prepared a free insights report and a short quiz to assess your current change management practices.  Download the report <p>Related reading: <a href="/posts/post-11">7 tips from procurement about change orders</a></p> to gain deeper insights and take the quiz to pinpoint areas for improvement in your approach to change orders. This will help you identify weaknesses and strengthen your project management capabilities.</p>
 
 
+
+
+<p><b>Related Articles</b></p>
+
+<ul>
+<li><a href="/posts/post-14">The Most Common Drivers of Change Orders (and How to Anticipate Them)</a></li>
+<li><a href="/posts/post-13">Why Change Orders Are Inevitable in Projects</a></li>
+<li><a href="/posts/post-10">7 tips from clients about change orders</a></li>
+</ul>
+
+<p><i>Want more insights on change order management? <a href="/resources">Download our free Change Order Management toolkit</a> with templates, checklists, and best practices from industry experts.</i></p>
+
 <p><b>Conclusion</b></p>
 
 <p>Unmanaged change orders are a silent killer of project success.  They don't just impact budgets; they erode team morale, strain client relationships, and jeopardize project timelines.  By implementing the strategies outlined in this post – from establishing a robust change management process to leveraging technology and fostering a culture of proactive communication – you can significantly mitigate the hidden costs and ensure your projects stay on track and within budget. Remember, proactive planning and a well-defined change management system are critical investments that pay off in the long run.</p>
