@@ -358,7 +358,7 @@ const ProjectManagerInfographic: React.FC = () => {
                 <span className="font-semibold text-sm">Level 1</span>
               </div>
               <p className="text-xs text-gray-600">PM Authority</p>
-              <p className="text-sm font-bold text-gray-800">< $10,000</p>
+              <p className="text-sm font-bold text-gray-800">&lt; $10,000</p>
             </div>
             
             <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -380,7 +380,7 @@ const ProjectManagerInfographic: React.FC = () => {
                 <span className="font-semibold text-sm">Level 3</span>
               </div>
               <p className="text-xs text-gray-600">Executive Board</p>
-              <p className="text-sm font-bold text-gray-800">> $50,000</p>
+              <p className="text-sm font-bold text-gray-800">&gt; $50,000</p>
             </div>
           </div>
         </div>
