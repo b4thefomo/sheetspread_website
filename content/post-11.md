@@ -89,6 +89,12 @@
 
 
 
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">
+  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Visual Learning Resource</p>
+  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Download our Procurement Change Order Infographic - perfect for team meetings and presentations!</p>
+  <a href="/resources/infographics" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download Infographic →</a>
+</div>
 <p><b>Related Articles</b></p>
 
 <ul>
