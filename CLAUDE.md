@@ -65,5 +65,38 @@ The blog covers AI-powered location intelligence topics including:
 - Images for posts should be placed in `/public` with matching slug names (e.g., `post-1.jpeg`)
 - The application extracts the first 200 characters of content as post excerpts
 
+## Content Generation & Sanitization Guide
+
+### Automated Content Creation
+The application includes scripts for automated blog post generation:
+- `npm run create-post` - Creates the next post from content-calendar.json
+- Automatically generates blog content, images, and updates post status
+- Runs post-processing for internal linking and resource integration
+
+### Content Sanitization Rules
+**IMPORTANT**: All generated content must be sanitized to avoid AI detection patterns:
+
+1. **Double Dashes**: Replace all `--` with single dash `-`
+   - DO NOT use em dashes (—) as they signal AI-generated content
+   - Use single dashes for all dash purposes
+
+2. **Automatic Sanitization**: The `sanitizeContent.js` script:
+   - Runs automatically after each post generation
+   - Removes double dashes and replaces with single dashes
+   - Cleans up extra whitespace
+   - Fixes punctuation spacing
+   - Can be run manually: `node scripts/sanitizeContent.js`
+
+3. **Manual Sanitization**: 
+   - Run on all content: `node scripts/sanitizeContent.js`
+   - Run on specific post: `node scripts/sanitizeContent.js post-id`
+
+### Content Quality Guidelines
+- Avoid overly perfect grammar that signals AI generation
+- Use varied sentence structures
+- Include industry-specific terminology naturally
+- Break up long paragraphs for better readability
+- Use HTML tags for formatting, not markdown
+
 
 
