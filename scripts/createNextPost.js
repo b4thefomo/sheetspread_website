@@ -136,6 +136,11 @@ async function createNextPost() {
     const { postProcessBlog } = require('./postProcessBlog');
     await postProcessBlog(nextPost.id);
 
+    // Run content sanitization
+    console.log('\n🧹 Running content sanitization...');
+    const { sanitizePost } = require('./sanitizeContent');
+    sanitizePost(nextPost.id);
+
     console.log('\n🎉 Post creation complete!');
     console.log(`   Blog: content/${nextPost.id}.md`);
     console.log(`   Image: public/${nextPost.id}.jpeg`);
