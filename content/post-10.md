@@ -1,4 +1,4 @@
-7 tips from clients about change orders  <p><b>Change Order Management From a Client’s Perspective: The Complete Playbook</b></p>
+7 tips from clients about change orders
 
 <p>Change orders are inevitable in construction, but they don’t have to derail budgets or schedules. This guide shows owners and client-side teams how to manage change orders proactively-from setting the rules in your contracts to pricing, negotiation, documentation, and dispute avoidance. By following a clear, data-driven process, you can protect value, preserve relationships, and keep your project on course.</p>
 

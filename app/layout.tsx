@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans">{children}</body>
+      <body className="font-mono bg-yellow-50 text-black">{children}<Analytics /></body>
     </html>
   )
 } 

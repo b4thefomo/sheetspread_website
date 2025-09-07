@@ -1,4 +1,4 @@
-7 tips from Project Managers about Change Orders  <p>Change order management can make or break project outcomes. From a project manager’s perspective, each change reshapes scope, schedule, cost, and risk-and the team’s credibility. In this article, I share a practical, end‑to‑end approach to controlling changes: diagnosing causes, designing a lean workflow, estimating impacts, securing approvals, and using metrics to continuously improve across diverse industries and project types today.</p>
+7 tips from project managers about change orders
 
 <p><b>The Reality of Change Orders: Why They Happen and Why They Matter</b></p>
 <p>Change orders are inevitable. Markets shift, users learn, constraints emerge, and unknowns become known. As a project manager, the goal isn’t zero change-it’s disciplined <i>change order management</i> that preserves value and trust.</p>

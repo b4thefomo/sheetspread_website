@@ -25,58 +25,116 @@ export default function PostPage({ params }: PostPageProps) {
   const postImage = getPostImage(params.slug)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-yellow-50">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-4 mt-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link href="/" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-            ← Back to Blog
-          </Link>
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-[#FF6600] hover:bg-[#FF6600] hover:text-black px-3 py-2 border-2 border-[#FF6600] text-sm font-bold uppercase tracking-wider transition-colors duration-200">
+              &lt;&lt; RETURN TO CONSTRUCTION HQ
+            </Link>
+            <div className="flex items-center gap-2 text-xs uppercase tracking-wider">
+              <div className="w-2 h-2 bg-[#FF6600] border border-black"></div>
+              <span>READING MODE</span>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <article className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <article className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] overflow-hidden">
+          {/* Data Header */}
+          <div className="bg-black text-white p-4 uppercase text-sm tracking-wider">
+            <div className="flex justify-between items-center">
+              <span>CONSTRUCTION PROJECT: ACTIVE</span>
+              <span className="text-[#FF6600]">BLUEPRINT</span>
+            </div>
+          </div>
+
           {/* Hero Image */}
-          <div className="relative h-64 md:h-96 w-full">
+          <div className="relative h-64 md:h-96 w-full border-b-2 border-black">
             <Image
               src={postImage}
               alt={post.title}
               fill
               className="object-cover"
             />
+            <div className="absolute top-4 right-4 bg-[#FF6600] text-black px-3 py-2 text-sm uppercase font-bold border-2 border-black">
+              CONSTRUCTION BLUEPRINT
+            </div>
+            <div className="absolute bottom-4 left-4 bg-black text-white px-3 py-2 text-xs uppercase tracking-wider border border-white">
+              BLUEPRINT LOADED
+            </div>
           </div>
 
           {/* Content */}
           <div className="p-8 md:p-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              {post.title}
-            </h1>
+            {/* Title Section */}
+            <div className="mb-8 pb-6 border-b-2 border-black">
+              <div className="text-xs uppercase tracking-wider text-[#FF6600] mb-2">
+                // CONSTRUCTION DOCUMENT CLASSIFICATION: PUBLIC //
+              </div>
+              <h1 className="text-2xl md:text-3xl font-bold text-black mb-4 uppercase tracking-wide leading-tight">
+                {post.title}
+              </h1>
+              <div className="flex items-center gap-4 text-xs uppercase tracking-wider">
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#FF6600] border border-black"></div>
+                  STATUS: ACTIVE
+                </span>
+                <span>LENGTH: {post.content.length} BYTES</span>
+                <span>FORMAT: TEXT</span>
+              </div>
+            </div>
             
-            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              {renderPostWithCTA(post.content, params.slug)}
+            {/* Content Body */}
+            <div className="prose prose-sm max-w-none text-black leading-relaxed">
+              <div className="border-l-4 border-[#FF6600] pl-4 mb-6">
+                <div className="text-xs uppercase tracking-wider text-[#FF6600] mb-2">
+                  CONSTRUCTION ANALYSIS:
+                </div>
+                <div className="text-sm">
+                  {renderPostWithCTA(post.content, params.slug)}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* System Info Footer */}
+          <div className="bg-black text-white p-4 text-xs uppercase tracking-wider">
+            <div className="flex justify-between items-center">
+              <span>END OF CONSTRUCTION PROJECT</span>
+              <div className="flex items-center gap-4">
+                <span className="text-[#FF6600]">BLUEPRINT: VERIFIED</span>
+                <span>PROJECT SIZE: {post.content.length} BYTES</span>
+              </div>
             </div>
           </div>
         </article>
 
         {/* Navigation */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <Link 
             href="/"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3 border-2 border-[#FF6600] text-[#FF6600] hover:bg-[#FF6600] hover:text-black font-bold uppercase tracking-wider transition-colors duration-200 shadow-[4px_4px_0px_0px_#FF6600]"
           >
-            View All Posts
+            RETURN TO CONSTRUCTION HQ &gt;&gt;
           </Link>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-gray-500 text-sm">
-            © 2024 SailsMaps. All rights reserved.
-          </p>
+      <footer className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-4 mb-4 mt-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center">
+            <p className="text-black text-xs uppercase tracking-wider mb-2">
+              // CONSTRUCTION HQ TERMINAL ACCESS //
+            </p>
+            <p className="text-black text-xs">
+              CONSTRUCTION HQ NETWORK - SECURE CONNECTION ESTABLISHED
+            </p>
+          </div>
         </div>
       </footer>
     </div>
