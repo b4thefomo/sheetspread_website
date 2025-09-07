@@ -1,5 +1,34 @@
 Why Change Order Management Can Make or Break Projects [+Free Insights Report and Quiz]
 
+
+<div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+    <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="color: white; margin: 0; font-size: 18px; font-weight: bold;">Not enough time to read?</h3>
+      <p style="color: #CBD5E0; margin: 0; font-size: 14px;">Listen in on this conversation to get the main takeaways</p>
+    </div>
+  </div>
+  <audio controls style="width: 100%; background: #1A202C; border-radius: 6px;">
+    <source src="/podcasts/audio/post-12.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <div style="margin-top: 12px; text-align: center;">
+    <a href="/podcasts/transcripts/post-12-transcript.txt" 
+       style="color: #667eea; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 4px;"
+       target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+      </svg>
+      View Transcript
+    </a>
+  </div>
+</div>
+
   <p><i>Construction projects, renovations, software development-regardless of the industry,  the unexpected is almost always expected.  Changes arise, scope creeps, and unforeseen circumstances demand adjustments.  How you manage these changes, documented as change orders, directly impacts the project's success, budget, and timeline.  Poor change order management can lead to disputes, cost overruns, and project failure, while a robust system ensures transparency, accountability, and ultimately, project completion on time and within budget. This post will explore the critical role of change order management and provide practical strategies to optimize this crucial process.</i></p>  <p><b>Understanding Change Orders: The Foundation of Project Control</b></p>
 
 <p>A change order is a formal, written document that authorizes modifications to the original project scope, specifications, or deliverables. It details the nature of the change, its impact on the project schedule and budget, and the agreed-upon adjustments to the contract.  Without a formalized change order process, projects quickly become chaotic, with disagreements over costs, responsibility, and timelines.  A well-defined system ensures that every alteration is documented, approved, and priced accurately. This fosters trust and collaboration among all stakeholders.  Key elements of a comprehensive change order typically include: a unique identifier, a detailed description of the change, justification for the change, impact on cost and schedule, signatures from all relevant parties, and revised project plans and specifications.</p>  <p><b>The High Cost of Ineffective Change Order Management</b></p>

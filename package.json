@@ -13,6 +13,9 @@
     "generate-image": "node scripts/generateImage.js",
     "generate-specific": "node scripts/generateSpecificImages.js",
     "post-process": "node scripts/postProcessBlog.js",
+    "generate-podcast": "node scripts/generatePodcast.js",
+    "add-podcast-players": "node scripts/addPodcastPlayers.js",
+    "update-header-images": "node scripts/updateHeaderImages.js",
     "test-automation": "node -e \"console.log('Testing automation setup...'); const fs = require('fs'); const cal = JSON.parse(fs.readFileSync('./content-calendar.json')); const next = cal.posts.find(p => p.status !== 'Done'); console.log(next ? '✅ Next post to generate: ' + next.id : '⚠️  No posts to generate');\""
   },
   "dependencies": {
@@ -26,17 +29,20 @@
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.1"
+    "sharp": "^0.33.1",
+    "wav": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/wav": "^1.0.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

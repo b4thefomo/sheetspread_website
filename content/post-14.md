@@ -1,5 +1,34 @@
 The Most Common Drivers of Change Orders (and How to Anticipate Them) [+Free Insights Report and Quiz]
 
+
+<div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+    <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="color: white; margin: 0; font-size: 18px; font-weight: bold;">Not enough time to read?</h3>
+      <p style="color: #CBD5E0; margin: 0; font-size: 14px;">Listen in on this conversation to get the main takeaways</p>
+    </div>
+  </div>
+  <audio controls style="width: 100%; background: #1A202C; border-radius: 6px;">
+    <source src="/podcasts/audio/post-14.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <div style="margin-top: 12px; text-align: center;">
+    <a href="/podcasts/transcripts/post-14-transcript.txt" 
+       style="color: #667eea; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 4px;"
+       target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+      </svg>
+      View Transcript
+    </a>
+  </div>
+</div>
+
 <p><b>Understanding the Impact of Change Orders</b></p>
 
 <p>Before diving into the specifics, it's crucial to understand the far-reaching consequences of poorly managed change orders.  They can disrupt project timelines, leading to missed deadlines and penalties.  Increased costs, often exceeding initial budget projections, can strain project resources and impact profitability.  Furthermore, the constant renegotiation and approval process associated with change orders can create friction among stakeholders, damaging relationships and hindering collaboration.  To avoid these pitfalls, a proactive and well-defined change management process is essential. 

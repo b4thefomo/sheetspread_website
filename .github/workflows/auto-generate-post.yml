@@ -24,6 +24,11 @@ jobs:
       group: generate-post
       cancel-in-progress: false
     
+    # Environment variables available to all steps
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -67,11 +72,42 @@ jobs:
           
       - name: Generate blog post content
         if: steps.check-calendar.outputs.has_post == 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           echo "🚀 Generating post: ${{ steps.check-calendar.outputs.post_id }}"
           node scripts/createNextPost.js
+          
+      - name: Generate podcast content
+        if: steps.check-calendar.outputs.has_post == 'true'
+        run: |
+          POST_ID="${{ steps.check-calendar.outputs.post_id }}"
+          echo "🎙️ Generating podcast for: $POST_ID"
+          
+          # Generate podcast (transcript and audio if TTS works)
+          npm run generate-podcast generate "$POST_ID" || {
+            echo "⚠️ Podcast generation failed, continuing without audio"
+          }
+          
+      - name: Update header image
+        if: steps.check-calendar.outputs.has_post == 'true'
+        run: |
+          POST_ID="${{ steps.check-calendar.outputs.post_id }}"
+          echo "🖼️ Updating header image for: $POST_ID"
+          
+          # Update header image with post type and reading time
+          npm run update-header-images "$POST_ID" || {
+            echo "⚠️ Header image update failed, continuing"
+          }
+          
+      - name: Add podcast player
+        if: steps.check-calendar.outputs.has_post == 'true'
+        run: |
+          POST_ID="${{ steps.check-calendar.outputs.post_id }}"
+          echo "🎧 Adding podcast player for: $POST_ID"
+          
+          # Add podcast player to the post if transcript exists
+          npm run add-podcast-players "$POST_ID" || {
+            echo "⚠️ Podcast player addition failed, continuing"
+          }
           
       - name: Verify generation success
         if: steps.check-calendar.outputs.has_post == 'true'
@@ -96,6 +132,23 @@ jobs:
             echo "image_created=false" >> $GITHUB_OUTPUT
           fi
           
+          # Check for podcast files
+          if [ -f "public/podcasts/transcripts/${POST_ID}-transcript.txt" ]; then
+            echo "✅ Podcast transcript created: public/podcasts/transcripts/${POST_ID}-transcript.txt"
+            echo "transcript_created=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Podcast transcript not found"
+            echo "transcript_created=false" >> $GITHUB_OUTPUT
+          fi
+          
+          if [ -f "public/podcasts/audio/${POST_ID}.wav" ]; then
+            echo "✅ Podcast audio created: public/podcasts/audio/${POST_ID}.wav"
+            echo "audio_created=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Podcast audio not found (TTS may have failed)"
+            echo "audio_created=false" >> $GITHUB_OUTPUT
+          fi
+          
       - name: Commit and push changes
         if: steps.check-calendar.outputs.has_post == 'true' && steps.verify.outputs.markdown_created == 'true'
         run: |
@@ -110,7 +163,10 @@ jobs:
           COMMIT_MSG="🤖 Auto-generated blog post: ${POST_ID}
 
           - Generated content for ${POST_ID}
-          - Created markdown file and image
+          - Created markdown file and header image
+          - Generated podcast transcript and audio
+          - Updated header image with post type and reading time
+          - Added podcast player to post content
           - Applied content sanitization
           - Added internal links and resources
           - Updated content calendar status
@@ -138,8 +194,16 @@ jobs:
           echo "✅ Successfully generated post: ${{ steps.check-calendar.outputs.post_id }}"
           echo "📊 Summary:"
           echo "  - Markdown: ${{ steps.verify.outputs.markdown_created }}"
-          echo "  - Image: ${{ steps.verify.outputs.image_created }}"
+          echo "  - Header Image: ${{ steps.verify.outputs.image_created }}"
+          echo "  - Podcast Transcript: ${{ steps.verify.outputs.transcript_created }}"
+          echo "  - Podcast Audio: ${{ steps.verify.outputs.audio_created }}"
           echo "  - Build: Success"
+          echo ""
+          echo "🎧 Podcast features:"
+          echo "  - Construction industry conversation format"
+          echo "  - Direct, no-nonsense communication style"
+          echo "  - Estimated 4-7 minute listening time"
+          echo "  - Professional British accents (if audio generated)"
           
       - name: Handle generation failure
         if: failure() && steps.check-calendar.outputs.has_post == 'true'
@@ -155,6 +219,11 @@ jobs:
           echo "📋 Details:"
           echo "  - Markdown created: ${{ steps.verify.outputs.markdown_created || 'unknown' }}"
           echo "  - Image created: ${{ steps.verify.outputs.image_created || 'unknown' }}"
+          echo "  - Transcript created: ${{ steps.verify.outputs.transcript_created || 'unknown' }}"
+          echo "  - Audio created: ${{ steps.verify.outputs.audio_created || 'unknown' }}"
           echo ""
           echo "To manually generate, run:"
           echo "  npm run create-post"
+          echo "  npm run generate-podcast generate [post-id]"
+          echo "  npm run update-header-images [post-id]"
+          echo "  npm run add-podcast-players [post-id]"
