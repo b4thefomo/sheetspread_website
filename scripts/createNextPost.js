@@ -42,9 +42,8 @@ async function createNextPost() {
 
     Format requirements:
     - Start with the title as plain text (no markdown heading)
-    - MUST include this exact image tag on line 3: <img src="/public/${nextPost.id}.jpeg" style="width: 500px; max-width: 100%; height: auto" />
-    - Add two blank lines after the image
-    - Start with an italicized introduction paragraph in <p><i>...</i></p> tags
+    - DO NOT include any image tags in the content
+    - Start immediately with an italicized introduction paragraph in <p><i>...</i></p> tags
     - Use <p><b>Section Headings</b></p> for main sections
     - Use HTML <p>, <ul>, <li>, <b>, <i> tags throughout (no markdown)
     - Include 6-8 main sections with practical, actionable content

@@ -9,6 +9,7 @@
     "lint": "next lint",
     "create-post": "node scripts/createNextPost.js",
     "sanitize": "node scripts/sanitizeContent.js",
+    "remove-images": "node scripts/removeImageTags.js",
     "generate-image": "node scripts/generateImage.js",
     "generate-specific": "node scripts/generateSpecificImages.js",
     "post-process": "node scripts/postProcessBlog.js",

@@ -18,8 +18,12 @@ function sanitizeContent(content) {
   // Replace remaining -- with single dash
   sanitized = sanitized.replace(/--/g, '-');
   
-  // Additional sanitization can be added here
-  // For example:
+  // Remove any image tags that might have been generated
+  sanitized = sanitized.replace(/<img\s+src="\/public\/[^"]*"[^>]*\/?>/gi, '');
+  sanitized = sanitized.replace(/<img\s+src="{{IMAGE_PLACEHOLDER}}"[^>]*\/?>/gi, '');
+  sanitized = sanitized.replace(/<img\s+[^>]*alt="[^"]*"[^>]*\/?>/gi, '');
+  
+  // Additional sanitization
   // - Remove extra whitespace
   sanitized = sanitized.replace(/\s{3,}/g, '  ');
   // - Ensure proper spacing around punctuation
