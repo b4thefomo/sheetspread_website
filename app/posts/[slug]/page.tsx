@@ -89,12 +89,12 @@ export default function PostPage({ params }: PostPageProps) {
             </div>
             
             {/* Content Body */}
-            <div className="prose prose-sm max-w-none text-black leading-relaxed">
+            <div className="construction-content max-w-none leading-relaxed">
               <div className="border-l-4 border-[#FF6600] pl-4 mb-6">
-                <div className="text-xs uppercase tracking-wider text-[#FF6600] mb-2">
+                <div className="text-xs uppercase tracking-wider text-[#FF6600] mb-4">
                   CONSTRUCTION ANALYSIS:
                 </div>
-                <div className="text-sm">
+                <div>
                   {renderPostWithCTA(post.content, params.slug)}
                 </div>
               </div>

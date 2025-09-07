@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+/* Construction Blog Content Hierarchy */
+.construction-content {
+  @apply font-mono text-black;
+}
+
+.construction-content h2 {
+  @apply text-lg sm:text-xl font-bold uppercase tracking-wider mb-4 mt-6 text-black;
+}
+
+.construction-content h3 {
+  @apply text-base sm:text-lg font-bold uppercase tracking-wide mb-3 mt-5 text-black;
+}
+
+.construction-content h4 {
+  @apply text-sm sm:text-base font-bold uppercase tracking-wide mb-2 mt-4 text-black;
+}
+
+.construction-content p {
+  @apply text-sm mb-4 leading-relaxed text-black;
+}
+
+.construction-content ul, .construction-content ol {
+  @apply text-sm mb-4 text-black;
+}
+
+.construction-content li {
+  @apply mb-2 text-black;
+}
+
+.construction-content strong, .construction-content b {
+  @apply font-bold text-black;
+}
+
+.construction-content em, .construction-content i {
+  @apply italic text-black;
+} 
