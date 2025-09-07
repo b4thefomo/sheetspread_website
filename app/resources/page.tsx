@@ -42,27 +42,57 @@ export default function ResourcesPage() {
           </div>
         </div>
         
-        {/* Featured Resource - Infographics */}
-        <div className="mb-8 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black]">
-          <div className="bg-black text-white p-3 uppercase text-sm tracking-wider">
-            <span>FEATURED.001</span>
-            <span className="float-right text-[#FF6600]">PRIORITY</span>
-          </div>
-          <div className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-black mb-2 uppercase tracking-wide">CONSTRUCTION CHANGE ORDER BLUEPRINTS</h2>
-                <p className="text-black mb-4 text-sm">VISUAL CONSTRUCTION PROTOCOLS FOR CHANGE ORDER MANAGEMENT ACROSS PROJECT TEAMS</p>
-                <Link 
-                  href="/resources/infographics" 
-                  className="inline-block bg-[#FF6600] text-black px-4 py-2 border-2 border-black font-bold uppercase tracking-wider hover:shadow-[4px_4px_0px_0px_black] transition-all duration-200"
-                >
-                  ACCESS BLUEPRINTS &gt;&gt;
-                </Link>
+        {/* Featured Resources Grid */}
+        <div className="grid gap-6 md:grid-cols-2 mb-8">
+          {/* Featured Resource - Cost Calculator */}
+          <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black]">
+            <div className="bg-black text-white p-3 uppercase text-sm tracking-wider">
+              <span>FEATURED.001</span>
+              <span className="float-right text-[#FF6600]">NEW</span>
+            </div>
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-black mb-2 uppercase tracking-wide">PROJECT COST CALCULATOR</h2>
+                  <p className="text-black mb-4 text-sm">REAL-TIME COST ANALYSIS FOR CONSTRUCTION PROJECT PLANNING AND DELAY IMPACT ASSESSMENT</p>
+                  <Link 
+                    href="/resources/cost-calculator" 
+                    className="inline-block bg-[#FF6600] text-black px-4 py-2 border-2 border-black font-bold uppercase tracking-wider hover:shadow-[4px_4px_0px_0px_black] transition-all duration-200"
+                  >
+                    CALCULATE COSTS &gt;&gt;
+                  </Link>
+                </div>
+                <div className="hidden md:block">
+                  <div className="w-24 h-24 bg-[#FF6600] border-2 border-black flex items-center justify-center">
+                    <span className="text-black font-bold text-xs uppercase">CALC</span>
+                  </div>
+                </div>
               </div>
-              <div className="hidden md:block">
-                <div className="w-24 h-24 bg-[#FF6600] border-2 border-black flex items-center justify-center">
-                  <span className="text-black font-bold text-xs uppercase">BLUEPRINT</span>
+            </div>
+          </div>
+
+          {/* Featured Resource - Infographics */}
+          <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black]">
+            <div className="bg-black text-white p-3 uppercase text-sm tracking-wider">
+              <span>FEATURED.002</span>
+              <span className="float-right text-[#FF6600]">PRIORITY</span>
+            </div>
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-black mb-2 uppercase tracking-wide">CONSTRUCTION CHANGE ORDER BLUEPRINTS</h2>
+                  <p className="text-black mb-4 text-sm">VISUAL CONSTRUCTION PROTOCOLS FOR CHANGE ORDER MANAGEMENT ACROSS PROJECT TEAMS</p>
+                  <Link 
+                    href="/resources/infographics" 
+                    className="inline-block bg-[#FF6600] text-black px-4 py-2 border-2 border-black font-bold uppercase tracking-wider hover:shadow-[4px_4px_0px_0px_black] transition-all duration-200"
+                  >
+                    ACCESS BLUEPRINTS &gt;&gt;
+                  </Link>
+                </div>
+                <div className="hidden md:block">
+                  <div className="w-24 h-24 bg-[#FF6600] border-2 border-black flex items-center justify-center">
+                    <span className="text-black font-bold text-xs uppercase">BLUEPRINT</span>
+                  </div>
                 </div>
               </div>
             </div>

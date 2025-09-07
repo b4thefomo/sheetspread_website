@@ -1,5 +1,34 @@
 7 tips from project managers about change orders
 
+
+<div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+    <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="color: white; margin: 0; font-size: 18px; font-weight: bold;">Not enough time to read?</h3>
+      <p style="color: #CBD5E0; margin: 0; font-size: 14px;">Listen in on this conversation to get the main takeaways</p>
+    </div>
+  </div>
+  <audio controls style="width: 100%; background: #1A202C; border-radius: 6px;">
+    <source src="/podcasts/audio/post-8.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <div style="margin-top: 12px; text-align: center;">
+    <a href="/podcasts/transcripts/post-8-transcript.txt" 
+       style="color: #667eea; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 4px;"
+       target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+      </svg>
+      View Transcript
+    </a>
+  </div>
+</div>
+
 <p><b>The Reality of Change Orders: Why They Happen and Why They Matter</b></p>
 <p>Change orders are inevitable. Markets shift, users learn, constraints emerge, and unknowns become known. As a project manager, the goal isn’t zero change-it’s disciplined <i>change order management</i> that preserves value and trust.</p>
 <ul>  <li><b>Common drivers:</b> ambiguous requirements, discovery during execution, regulatory updates, vendor lead-time changes, stakeholder turnover, technology obsolescence, and risk responses.</li>  <li><b>What’s at stake:</b> unmanaged changes inflate costs, slip schedules, degrade quality, and fracture relationships. Managed well, they improve fit-to-purpose, surface risks early, and provide a transparent audit trail.</li>  <li><b>Mindset shift:</b> treat each change as a mini business case. Ask: What problem does it solve? What value does it unlock? What is the least costly way to get that value?</li>
