@@ -1,6 +1,6 @@
 ### **Core Aesthetic**
 
-Retro computing meets cyberpunk - a fusion of 1980s terminal interfaces with futuristic data visualization. Clean, technical, and monospace-driven with sharp geometric elements on a reading-friendly background.
+Retro computing meets cyberpunk construction terminal - a fusion of 1980s construction site computers with modern project management interfaces. Clean, technical, and monospace-driven with sharp geometric elements on a reading-friendly background. Industrial construction theme with terminal-style data displays and project management terminology.
 
 ### **Color Palette**
 
@@ -36,23 +36,55 @@ Retro computing meets cyberpunk - a fusion of 1980s terminal interfaces with fut
 
 ### **Visual Elements**
 
-- **ASCII art patterns** for image placeholders and decorative elements
-- **Technical terminology** (NEURAL NETWORK, DATA ANALYSIS, SYSTEM STATUS)
-- **Wireframe graphics** and grid patterns
-- **Status indicators** with colored dots and technical readouts
-- **Terminal-style prompts** and system information displays
+- **Construction terminal headers**: Black bars with orange status indicators (ACTIVE, SECURE, READY)
+- **Technical terminology**: CONSTRUCTION HQ, BLUEPRINTS, PROJECT.001, TYPE: POST, CONSTRUCTION PROTOCOLS
+- **Status indicators**: Orange dots with technical readouts (ONLINE, VERIFIED, LOADED)
+- **Terminal-style prompts**: // CONSTRUCTION DOCUMENT CLASSIFICATION: PUBLIC //
+- **Data displays**: Byte counts, file sizes, reading time estimates
+- **Numbered entries**: [001], [002] for systematic organization
+- **Action buttons**: "ACCESS POST >>", "DOWNLOAD CONSTRUCTION FILE >>"
 
 
 ### **Component Styling**
 
-- **Cards**: White background, black double border with shadow, no border radius
-- **Navigation**: Simple horizontal layout with monospace text on yellow background
-- **Buttons/Links**: Orange accent color for active/hover states
-- **Data displays**: Technical formatting with monospace numbers and labels
+- **Cards**: White background, 2px black border with `shadow-[4px_4px_0px_0px_black]`, no border radius
+- **Terminal Headers**: Black background (`bg-black`) with white text and orange status indicators
+- **Navigation**: Three-section navbar (POSTS, RESOURCES, TOOLS) with dropdown terminals
+- **Buttons/Links**: Orange border (`border-[#FF6600]`) with hover state `hover:bg-[#FF6600] hover:text-black`
+- **Status Banners**: Construction protocol readouts with orange dots and technical data
+- **Post Cards**: Numbered headers (001, 002), content type indicators, reading time overlays
+- **Data displays**: Monospace formatting with BYTES, MIN READ, and technical specifications
 
 
 ### **Content Strategy**
 
-- **Futuristic themes** (AI, neural networks, cybersecurity, data analysis)
-- **System-like organization** with numbered entries and structured data
-- **ASCII art integration** for visual interest without breaking the monospace aesthetic
+- **Construction themes**: Project management, change orders, construction protocols, blueprints
+- **Terminal organization**: Numbered entries [001], [002], systematic data classification
+- **Technical readouts**: File sizes, reading times, status indicators, progress tracking
+- **Construction terminology**: HQ, BLUEPRINTS, CONSTRUCTION PROTOCOLS, PROJECT management
+- **System classifications**: TYPE: POST, CONSTRUCTION RESOURCE, BLUEPRINT: VERIFIED
+
+### **Branding & Terminology**
+
+- **Primary Brand**: LOWEDA CONSTRUCTION BLOG
+- **System Name**: CONSTRUCTION HQ NETWORK / CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM
+- **Navigation Sections**: POSTS, RESOURCES, TOOLS
+- **Status Indicators**: ACTIVE, SECURE, READY, ONLINE, VERIFIED, LOADED
+- **Content Types**: POST, RESOURCE, BLUEPRINT, CONSTRUCTION ASSESSMENT
+- **Action Language**: ACCESS POST >>, RETURN TO CONSTRUCTION HQ, DOWNLOAD CONSTRUCTION FILE
+
+### **Reading Experience Features**
+
+- **Reading Time**: X MIN READ overlays on post thumbnails
+- **Content Length**: X BYTES display for file size information
+- **Post Numbering**: 001, 002, 003 for systematic organization
+- **Content Classification**: TYPE: POST indicators for content categorization
+- **Character Limits**: 150-character excerpts for homepage readability
+
+### **Interactive Elements**
+
+- **Hover Effects**: `hover:shadow-[8px_8px_0px_0px_black]` with position shifts
+- **Dropdown Terminals**: Construction-themed navigation with black headers
+- **Status Dots**: Orange squares (`w-2 h-2 bg-[#FF6600] border border-black`) for indicators
+- **Button States**: Orange border with fill transitions on hover
+- **Construction Overlays**: BLUEPRINT LOADED, CONSTRUCTION BLUEPRINT, technical classifications
