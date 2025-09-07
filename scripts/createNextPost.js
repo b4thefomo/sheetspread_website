@@ -38,7 +38,7 @@ async function createNextPost() {
 
     console.log('✍️  Generating blog content...');
     
-    const contentPrompt = `Write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective. 
+    const contentPrompt = `As an copywriting expert in the style of david ogilvy, write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective. 
 
     Format requirements:
     - Start with the title as plain text (no markdown heading)
