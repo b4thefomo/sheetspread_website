@@ -14,26 +14,29 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-50">
       {/* Header */}
-      <header className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-4 mt-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-black uppercase tracking-wider">LOWEDA CONSTRUCTION BLOG</h1>
-              <p className="text-black mt-2 uppercase text-sm tracking-wide">// CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM</p>
+      <header className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-2 sm:mx-4 mt-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black uppercase tracking-wider leading-tight">LOWEDA CONSTRUCTION BLOG</h1>
+              <p className="text-black mt-1 sm:mt-2 uppercase text-xs sm:text-sm tracking-wide">// CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM</p>
             </div>
-            <ConstructionNavbar />
+            <div className="flex-shrink-0">
+              <ConstructionNavbar />
+            </div>
           </div>
         </div>
       </header>
 
       {/* System Status Banner */}
-      <div className="mx-4 mt-4 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] p-4">
-        <div className="flex items-center justify-between text-sm uppercase tracking-wider">
+      <div className="mx-2 sm:mx-4 mt-4 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] p-3 sm:p-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 text-xs sm:text-sm uppercase tracking-wider">
           <span className="text-black">SYSTEM STATUS:</span>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#FF6600] border border-black"></div>
-              CONSTRUCTION PROTOCOLS
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs">
+            <span className="flex items-center gap-1 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6600] border border-black"></div>
+              <span className="hidden sm:inline">CONSTRUCTION PROTOCOLS</span>
+              <span className="sm:hidden">PROTOCOLS</span>
             </span>
             <span>POSTS: {String(posts.length).padStart(2, '0')}</span>
             <span>MODE: ACTIVE</span>
@@ -42,8 +45,8 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {posts.map((post, index) => (
             <Link 
               key={post.slug} 
@@ -94,13 +97,13 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-4 mb-4 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <footer className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-2 sm:mx-4 mb-4 mt-8 sm:mt-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
           <div className="text-center">
             <p className="text-black text-xs uppercase tracking-wider mb-2">
               // CONSTRUCTION HQ TERMINAL 2024.12.07 //
             </p>
-            <p className="text-black text-xs">
+            <p className="text-black text-xs leading-relaxed">
               COPYRIGHT CONSTRUCTION HQ NETWORK - ALL BLUEPRINTS SECURED
             </p>
           </div>
