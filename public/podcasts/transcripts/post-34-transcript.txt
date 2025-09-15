@@ -1,0 +1,60 @@
+Podcast Transcript
+==================
+
+**(Intro music fades in and quickly fades out)**
+
+**Mike:** Right, Sarah. Let's cut straight to it. I’ve got a client on a major commercial build who’s trying to squeeze us. They want to slash 10% off the final account, but they’re refusing to accept any extension of time or a single change to the spec. It’s the classic ‘more for less, and faster’ problem. How do you even begin to negotiate that?
+
+**Sarah:** It’s the oldest problem in the book, Mike. And it always comes down to the same three levers: scope, time, and budget. You can’t change one without moving the others. The client thinks they can, but physics and finance say otherwise.
+
+**Mike:** Exactly. So where do we start?
+
+**Sarah:** We start by forcing clarity. Today, we’re not talking about rapport or soft skills. We're talking hard tactics. First, how to make the client pick their priority. Second, how to make strategic concessions instead of just giving things away. And finally, using hard data to shut down unrealistic demands. This is about taking back control of the conversation.
+
+**(Short musical sting)**
+
+**Sarah:** Right, first point: priorities. Your client says they want all three – the original scope, the original deadline, and a new, lower budget. That’s impossible. Your first job is to make them choose their *one* non-negotiable.
+
+**Mike:** How do you do that without just sounding difficult? I can't just say "pick one."
+
+**Sarah:** You don't. You present them with clear, binary choices. You go back to them and say, "Okay, we can achieve that 10% cost reduction. To do it, here are two options. Option A: we keep the handover date, but we value-engineer the M&E package and switch to the alternative specified flooring. That saves the 10%. Option B: we keep the high-end spec exactly as is, but the programme will extend by six weeks to allow for staggered procurement and a smaller team on-site. Which of those outcomes works best for you?"
+
+**Mike:** So you make the trade-off explicit. You put the consequence right next to the saving.
+
+**Sarah:** Precisely. You’re not saying no. You’re showing them *how* to get to their number. It forces them to admit what they actually care about most. Is it the handover date because they have tenants moving in? Or is it the prestige of the high-spec finish? Once you know their real priority, you know where you have leverage.
+
+**Mike:** That makes sense. That moves it from an argument to a multiple-choice question where I’ve written the answers. So, say they choose the handover date. That’s their priority. Now we're into trading scope against budget. This is where we get into concessions.
+
+**Sarah:** Yes, but *strategic* concessions. This isn't about caving. It's about giving up something that costs you little, to protect something that costs you a lot. Don't start by offering a discount on your prelims or your margin. That's just giving away money.
+
+**Mike:** So what do I offer?
+
+**Sarah:** You look at the spec. Are there provisional sums or materials with long lead times? You go back and say, "We can hold the completion date, but the specified German ironmongery has a 12-week lead time. We can switch to a readily available British equivalent, which gets us back on track and contributes to the saving." You’re giving them a concession on the spec – a minor one, hopefully – to protect your programme and your bottom line. You’re trading their 'nice-to-have' for your 'must-have'.
+
+**Mike:** I see. So you identify the easy wins first. But what about when they just say, "No, it's not good enough. Another contractor said they could do it for this price." That’s the objection I dread.
+
+**Sarah:** That’s when you bring out the data. That objection is usually a bluff, and data calls the bluff. Don't get defensive; get factual. You should have benchmark data ready. Say, "Okay, let's look at the numbers. Our current project cost per square metre is X, which is in line with industry benchmarks for this type of build in this region. The M&E package makes up 30% of the cost. To achieve a 10% overall saving, we’d need a 33% reduction in that package alone. That’s not possible without a significant redesign."
+
+**Mike:** You hit them with the maths.
+
+**Sarah:** You hit them with indisputable facts. Bring out the programme. Show them the critical path. Use a cost-per-day calculator to demonstrate the financial impact of a two-week delay caused by arguing over a minor item. When you replace their vague assertions with your hard data, the conversation changes. It’s no longer your opinion against theirs; it’s their wishful thinking against the project reality.
+
+**Mike:** And once we agree on these trade-offs...
+
+**Sarah:** You document it instantly. No handshake agreements. It goes into a formal variation instruction or a contract amendment, listing the exact changes to scope, time, and cost. Crystal clear. It protects you from memory loss down the line and ensures you get paid for the work you’re actually doing.
+
+**(Short musical sting)**
+
+**Sarah:** Alright, let’s wrap this up. Mike, the next time a client puts you in that impossible position, what are the three steps?
+
+**Mike:** Right. First, I make them choose their real priority by giving them clear, binary options. Is it the date, the spec, or the cost? Second, once I know their priority, I offer strategic concessions – trading things that are low-impact for me but high-value for them.
+
+**Sarah:** Spot on. And the third?
+
+**Mike:** I counter any objections with hard data. Benchmarks, programme analysis, cost impacts. I don't argue, I demonstrate. And finally, get every single change down in writing. No ambiguity.
+
+**Sarah:** Exactly. It’s about turning a high-pressure argument into a logical, structured negotiation where you control the framework. Do that, and you'll protect your project and your margin every time.
+
+**(Outro music swells)**
+
+Generated on: 2025-09-15T00:27:26.176Z
