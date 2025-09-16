@@ -1,6 +1,7 @@
 import ChangeManagementCTA from '@/components/ChangeManagementCTA'
 import BlogQuiz from '@/components/BlogQuiz'
 import RelatedPosts from '@/components/RelatedPosts'
+import ClientSideContent from '@/components/ClientSideContent'
 import { addInternalLinks } from '@/lib/internalLinks'
 import React from 'react'
 
@@ -46,6 +47,6 @@ export function renderPostWithCTA(content: string, slug: string) {
     return <>{result}</>
   }
 
-  // For all other posts, just render basic content
-  return <div dangerouslySetInnerHTML={{ __html: content }} />
+  // For all other posts, use client-side rendering to avoid hydration issues
+  return <ClientSideContent content={content} />
 }

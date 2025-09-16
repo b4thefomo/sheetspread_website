@@ -28,8 +28,13 @@ async function postProcessBlog(postId) {
     // Replace internal link placeholders  
     content = replaceInternalLinkPlaceholders(content, otherPosts);
     
-    // Fix any incorrect image references
-    content = fixImageReferences(content, postId);
+    // Note: Image references are handled by Next.js dynamic routing - no inline images in post content
+    
+    // Add slide links automatically
+    content = await addSlideLinksToContent(content, postId);
+    
+    // Add infographic links automatically
+    content = await addInfographicLinksToContent(content, postId);
     
     // Save processed content
     fs.writeFileSync(filePath, content);
@@ -155,42 +160,8 @@ function replaceInternalLinkPlaceholders(content, otherPosts) {
   return content;
 }
 
-function fixImageReferences(content, postId) {
-  console.log('\n🖼️  Fixing image references...');
-  
-  const correctImageTag = `<img src="/public/${postId}.jpeg" style="width: 500px; max-width: 100%; height: auto" />`;
-  
-  // Replace various possible incorrect image tags
-  const incorrectPatterns = [
-    /<img src="placeholder_image\.[^"]*"[^>]*>/gi,
-    /<img src="[^"]*placeholder[^"]*"[^>]*>/gi,
-    /<img[^>]*alt="[^"]*"[^>]*>/gi,
-  ];
-  
-  let fixed = false;
-  incorrectPatterns.forEach(pattern => {
-    if (pattern.test(content)) {
-      content = content.replace(pattern, correctImageTag);
-      fixed = true;
-    }
-  });
-  
-  // Also ensure the image tag is on line 3 if it's missing
-  const lines = content.split('\n');
-  if (lines.length > 2 && !lines[2].includes('<img')) {
-    lines.splice(2, 0, '', correctImageTag, '');
-    content = lines.join('\n');
-    fixed = true;
-  }
-  
-  if (fixed) {
-    console.log(`   ✅ Fixed image reference to use ${postId}.jpeg`);
-  } else {
-    console.log(`   ✅ Image reference already correct`);
-  }
-  
-  return content;
-}
+// Image references removed - Next.js handles images via dynamic routing in /public directory
+// Post thumbnails are automatically displayed by the blog layout component
 
 // If called directly from command line
 if (require.main === module) {
@@ -200,6 +171,136 @@ if (require.main === module) {
     process.exit(1);
   }
   postProcessBlog(postId);
+}
+
+async function addSlideLinksToContent(content, postId) {
+  console.log('\n🎯 Adding slide links...');
+  
+  try {
+    // Import the SlideLinksAdder functionality
+    const { SlideLinksAdder } = require('./addSlideLinks');
+    const adder = new SlideLinksAdder();
+    
+    // Check if slides exist for this post
+    const slideCount = adder.getSlideCount(postId);
+    if (slideCount === 0) {
+      console.log(`   ⚠️ No slides found for ${postId}, skipping slide link addition`);
+      return content;
+    }
+    
+    // Check if slide links already exist
+    if (content.includes('/resources/slides/')) {
+      console.log(`   ✅ ${postId} already has slide links`);
+      return content;
+    }
+    
+    // Extract post title for slide section
+    const postTitle = adder.extractPostTitle(content);
+    const slideSection = adder.createSlideSection(postId, slideCount, postTitle);
+    
+    // Find a good place to insert slides early in the content
+    // Look for the 2nd or 3rd major section (after introduction)
+    const sectionPattern = /<p><b>[^<]+<\/b><\/p>/g;
+    const sections = [...content.matchAll(sectionPattern)];
+    
+    if (sections.length >= 2) {
+      // Insert after the 2nd major section
+      const insertPoint = sections[1].index + sections[1][0].length;
+      const beforeSlides = content.substring(0, insertPoint);
+      const afterSlides = content.substring(insertPoint);
+      content = beforeSlides + '\n\n' + slideSection + '\n' + afterSlides;
+      console.log(`   ✅ Added slide links after 2nd section in ${postId}`);
+    } else if (sections.length >= 1) {
+      // Insert after the 1st major section if only 1 exists
+      const insertPoint = sections[0].index + sections[0][0].length;
+      const beforeSlides = content.substring(0, insertPoint);
+      const afterSlides = content.substring(insertPoint);
+      content = beforeSlides + '\n\n' + slideSection + '\n' + afterSlides;
+      console.log(`   ✅ Added slide links after 1st section in ${postId}`);
+    } else {
+      // Fallback: add before "Related Articles" or "Conclusion"
+      if (content.includes('<p><b>Related Articles</b></p>')) {
+        content = content.replace(
+          '<p><b>Related Articles</b></p>',
+          `${slideSection}\n<p><b>Related Articles</b></p>`
+        );
+        console.log(`   ✅ Added slide links before Related Articles in ${postId}`);
+      } else if (content.includes('<p><b>Conclusion</b></p>')) {
+        content = content.replace(
+          '<p><b>Conclusion</b></p>',
+          `${slideSection}\n<p><b>Conclusion</b></p>`
+        );
+        console.log(`   ✅ Added slide links before Conclusion in ${postId}`);
+      } else {
+        // Add at the end if no standard sections found
+        content = content.trim() + '\n\n' + slideSection;
+        console.log(`   ✅ Added slide links to end of ${postId}`);
+      }
+    }
+    
+    return content;
+    
+  } catch (error) {
+    console.error(`   ❌ Error adding slide links to ${postId}:`, error.message);
+    return content; // Return original content if there's an error
+  }
+}
+
+async function addInfographicLinksToContent(content, postId) {
+  console.log('\n📊 Adding infographic links...');
+  
+  try {
+    // Check if infographic exists for this post
+    const infographicPath = `./public/resources/infographics/${postId}/infographic.html`;
+    if (!fs.existsSync(infographicPath)) {
+      console.log(`   ⚠️ No infographic found for ${postId}, skipping infographic link addition`);
+      return content;
+    }
+    
+    // Check if infographic links already exist
+    if (content.includes('/resources/infographics/')) {
+      console.log(`   ✅ ${postId} already has infographic links`);
+      return content;
+    }
+    
+    // Extract post title for infographic section
+    const lines = content.split('\n');
+    const postTitle = lines[0].trim();
+    
+    // Create infographic section
+    const infographicSection = `
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #FF6600; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
+<h4 style="color: #FF6600; margin: 0 0 12px 0; font-family: 'Courier New', monospace;">🏗️ Visual Summary</h4>
+<h3 style="color: #ffffff; margin: 0 0 16px 0;">Quick Reference Infographic</h3>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; opacity: 0.9;">Get the key takeaways from this article in a visual format perfect for sharing or quick reference.</p>
+<a href="/resources/infographics/${postId}/infographic.html" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">View Infographic →</a>
+</div>`;
+    
+    // Add infographic section at the end, before Related Articles or Conclusion if they exist
+    if (content.includes('<p><b>Related Articles</b></p>')) {
+      content = content.replace(
+        '<p><b>Related Articles</b></p>',
+        `${infographicSection}\n<p><b>Related Articles</b></p>`
+      );
+      console.log(`   ✅ Added infographic links before Related Articles in ${postId}`);
+    } else if (content.includes('<p><b>Conclusion</b></p>')) {
+      content = content.replace(
+        '<p><b>Conclusion</b></p>',
+        `${infographicSection}\n<p><b>Conclusion</b></p>`
+      );
+      console.log(`   ✅ Added infographic links before Conclusion in ${postId}`);
+    } else {
+      // Add at the very end
+      content = content.trim() + '\n\n' + infographicSection;
+      console.log(`   ✅ Added infographic links to end of ${postId}`);
+    }
+    
+    return content;
+    
+  } catch (error) {
+    console.error(`   ❌ Error adding infographic links to ${postId}:`, error.message);
+    return content; // Return original content if there's an error
+  }
 }
 
 module.exports = { postProcessBlog };

@@ -76,6 +76,28 @@ jobs:
           echo "🚀 Generating post: ${{ steps.check-calendar.outputs.post_id }}"
           node scripts/createNextPost.js
           
+      - name: Generate slides
+        if: steps.check-calendar.outputs.has_post == 'true'
+        run: |
+          POST_ID="${{ steps.check-calendar.outputs.post_id }}"
+          echo "🎯 Generating slides for: $POST_ID"
+          
+          # Generate comprehensive downloadable slides with 12+ detailed takeaways
+          node scripts/generateComprehensiveSlides.js generate-post "$POST_ID" || {
+            echo "⚠️ Comprehensive slide generation failed, continuing"
+          }
+          
+      - name: Final post processing
+        if: steps.check-calendar.outputs.has_post == 'true'
+        run: |
+          POST_ID="${{ steps.check-calendar.outputs.post_id }}"
+          echo "🔄 Running final post-processing for: $POST_ID"
+          
+          # Re-run post-processing to add slide links now that slides exist
+          node scripts/postProcessBlog.js "$POST_ID" || {
+            echo "⚠️ Final post-processing failed, continuing"
+          }
+          
       - name: Generate podcast content
         if: steps.check-calendar.outputs.has_post == 'true'
         run: |
@@ -149,6 +171,15 @@ jobs:
             echo "audio_created=false" >> $GITHUB_OUTPUT
           fi
           
+          # Check for slides
+          if [ -f "public/resources/slides/${POST_ID}/slides.html" ]; then
+            echo "✅ Slides created: public/resources/slides/${POST_ID}/"
+            echo "slides_created=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Slides not found"
+            echo "slides_created=false" >> $GITHUB_OUTPUT
+          fi
+          
       - name: Commit and push changes
         if: steps.check-calendar.outputs.has_post == 'true' && steps.verify.outputs.markdown_created == 'true'
         run: |
@@ -167,6 +198,7 @@ jobs:
           - Generated podcast transcript and audio
           - Updated header image with post type and reading time
           - Added podcast player to post content
+          - Generated downloadable slides with key takeaways
           - Applied content sanitization
           - Added internal links and resources
           - Updated content calendar status
@@ -197,6 +229,7 @@ jobs:
           echo "  - Header Image: ${{ steps.verify.outputs.image_created }}"
           echo "  - Podcast Transcript: ${{ steps.verify.outputs.transcript_created }}"
           echo "  - Podcast Audio: ${{ steps.verify.outputs.audio_created }}"
+          echo "  - Downloadable Slides: ${{ steps.verify.outputs.slides_created }}"
           echo "  - Build: Success"
           echo ""
           echo "🎧 Podcast features:"
@@ -221,6 +254,7 @@ jobs:
           echo "  - Image created: ${{ steps.verify.outputs.image_created || 'unknown' }}"
           echo "  - Transcript created: ${{ steps.verify.outputs.transcript_created || 'unknown' }}"
           echo "  - Audio created: ${{ steps.verify.outputs.audio_created || 'unknown' }}"
+          echo "  - Slides created: ${{ steps.verify.outputs.slides_created || 'unknown' }}"
           echo ""
           echo "To manually generate, run:"
           echo "  npm run create-post"

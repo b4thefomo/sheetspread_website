@@ -1,6 +1,4 @@
 7 tips from procurements about change orders
-
-
 <div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
     <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -27,7 +25,6 @@
       View Transcript
     </a>
   </div>
-</div>
 
 <p><b>Why Change Orders Matter to Procurement Teams</b></p>
 
@@ -48,6 +45,12 @@
 </ul>
 
 <p><b>Strategic Vendor Management During Changes</b></p>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">
+  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Downloadable Presentation Slides</p>
+  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Get our comprehensive 15-slide presentation with key takeaways and actionable insights!</p>
+  <a href="/resources/slides/post-11/slides.html" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;" target="_blank">View Presentation (15 slides) →</a>
+</div>
 
 <p>Change orders reveal vendor character. Some partners absorb minor impacts to preserve relationships; others weaponize every disruption into margin expansion. Your approach should differentiate between strategic partners and transactional suppliers, while maintaining consistent process discipline across all relationships.</p>
 
@@ -110,8 +113,15 @@
 <li><b>Cost metrics:</b> Average change order value, cost impact as percentage of original contract, markup analysis by vendor and change type. Cost control effectiveness indicators.</li>
 <li><b>Cycle time metrics:</b> Average time from request to approval, supplier response times, approval bottlenecks. Speed metrics that impact project delivery.</li>
 <li><b>Quality metrics:</b> Change order accuracy, rework rates, dispute frequency, vendor compliance with documentation requirements. Quality indicators that prevent future problems.</li>
-</ul>  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Visual Learning Resource</p>  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Download our Procurement Change Order Infographic - perfect for team meetings and presentations!</p>  <a href="/resources/infographics" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download Infographic →</a>
+</ul>  
+
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #FF6600; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
+<h4 style="color: #FF6600; margin: 0 0 12px 0; font-family: 'Courier New', monospace;">🏗️ Visual Summary</h4>
+<h3 style="color: #ffffff; margin: 0 0 16px 0;">Quick Reference Infographic</h3>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; opacity: 0.9;">Get the key takeaways from this article in a visual format perfect for sharing or quick reference.</p>
+<a href="/resources/infographics/post-11/infographic.html" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">View Infographic →</a>
 </div>
+
 <p><b>Related Articles</b></p>
 
 <ul>

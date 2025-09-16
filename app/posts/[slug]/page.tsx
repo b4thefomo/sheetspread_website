@@ -94,9 +94,7 @@ export default function PostPage({ params }: PostPageProps) {
                 <div className="text-xs uppercase tracking-wider text-[#FF6600] mb-4">
                   CONSTRUCTION ANALYSIS:
                 </div>
-                <div>
-                  {renderPostWithCTA(post.content, params.slug)}
-                </div>
+                {renderPostWithCTA(post.content, params.slug)}
               </div>
             </div>
           </div>

@@ -98,5 +98,44 @@ The application includes scripts for automated blog post generation:
 - Break up long paragraphs for better readability
 - Use HTML tags for formatting, not markdown
 
+### Image Handling Rules
+**CRITICAL**: Post content must NEVER include inline image tags:
+
+1. **NO Image Tags in Post Bodies**:
+   - ❌ NEVER include `<img>` tags in post markdown content
+   - ❌ DO NOT add image references in post body
+   - ✅ Images are handled automatically by Next.js routing
+
+2. **Automatic Image Display**:
+   - Post thumbnails are displayed automatically by the blog layout
+   - Images are served from `/public/post-{id}.jpeg`
+   - Next.js Image component handles optimization
+
+3. **Post Generation Rules**:
+   - Content generation prompts explicitly forbid image tags
+   - Post-processing no longer adds image references
+   - This prevents duplicate images and layout issues
+
+### Content Hook Guidelines
+**Use these strategies for creating engaging blog post titles:**
+
+1. **Ask a provocative question**: Start with a compelling question that makes the reader curious or addresses a problem they have
+   - Example: "Why Do 73% of Change Requests Get Rejected?"
+
+2. **Use startling statistics**: Share a surprising data point that highlights the importance or impact of your topic
+   - Example: "90% of Change Orders Never Get Verified. Here's What You're Missing"
+
+3. **Make a bold statement**: Use a confident, declarative statement that challenges assumptions or makes a strong claim
+   - Example: "Your Scope Creep Starts Here: The Work Package Mapping Method"
+
+4. **Promise a solution or benefit**: Directly state how your content will solve a problem or provide a valuable result
+   - Example: "The Complete Change Order System Used by Fortune 500 PMs"
+
+5. **Create curiosity or urgency**: Use phrases like "the secret no one tells you" or "don't miss out" to spark immediate interest
+   - Example: "The Legal Clause That Saved a Contractor $800K (Is It in Your Contract?)"
+
+6. **Tell a short anecdote**: Begin with a brief, intriguing story that sets the stage for your content
+   - Example: "How One Missing Update Cost a PM Their Biggest Client (And How to Prevent It)"
+
 
 

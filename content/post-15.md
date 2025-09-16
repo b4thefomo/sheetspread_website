@@ -1,6 +1,4 @@
 The Hidden Costs of Unmanaged Change Orders [+Free Insights Report and Quiz]
-
-
 <div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
     <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -27,7 +25,6 @@ The Hidden Costs of Unmanaged Change Orders [+Free Insights Report and Quiz]
       View Transcript
     </a>
   </div>
-</div>
 
   <p><i>Change orders.  The seemingly innocuous paperwork that can quickly spiral into a project management nightmare.  Often viewed as minor adjustments, these seemingly small alterations can dramatically inflate budgets, delay deadlines, and significantly impact project success. This post delves into the often-overlooked hidden costs of unmanaged change orders, offering practical strategies to mitigate risk and maintain project control.  We’ll uncover the true financial and operational toll of neglecting a robust change management process and equip you with the tools to avoid these pitfalls.</i></p>  <p><b>Understanding the Nature of Change Orders</b></p>
 
@@ -41,12 +38,12 @@ The Hidden Costs of Unmanaged Change Orders [+Free Insights Report and Quiz]
 <li><b>Administrative Overhead:</b>  Managing numerous uncontrolled changes requires significant administrative time and resources – a hidden cost often underestimated.</li>
 </ul>
 <p>Failing to properly document and price change orders can lead to disputes with clients, costly renegotiations, and even legal battles.  A comprehensive change management system that includes detailed cost estimates and client approval at each stage is essential to avoid these issues. 
-<div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 24px; margin: 24px 0;">
-<h4 style="color: #0891b2; margin: 0 0 12px 0;">📊 Free Resource</h4>
-<h3 style="margin: 0 0 8px 0;"><a href="/resources/change-order-management" style="color: #1f2937; text-decoration: none;">Change Order Management: A Supplier's Perspective</a></h3>
-<p style="color: #6b7280; margin: 0 0 16px 0; font-size: 14px;">Description: Comprehensive guide on managing change orders effectively from a supplier's point of view, including best practices and strategies...</p>
-<a href="/resources/change-order-management" style="background: #0891b2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 500; display: inline-block;">Download Free Resource →</a>
-</div> offers excellent resources on this topic.</p>  <p><b>The Indirect Costs: A Silent Drain on Resources</b></p>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">
+  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Downloadable Presentation Slides</p>
+  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Get our comprehensive 14-slide presentation with key takeaways and actionable insights!</p>
+  <a href="/resources/slides/post-15/slides.html" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;" target="_blank">View Presentation (14 slides) →</a>
+</div>
 
 <p>Beyond the immediate financial outlay, unmanaged change orders incur significant indirect costs that often go unnoticed:</p>
 <ul>
@@ -82,8 +79,15 @@ The Hidden Costs of Unmanaged Change Orders [+Free Insights Report and Quiz]
 
 <p>Empowering your project teams with the knowledge and skills to manage change effectively is crucial.  Provide training on best practices for change management, including how to identify, assess, and mitigate potential risks.  Encourage a culture of proactive communication and collaboration, where team members feel comfortable raising concerns and suggesting solutions.  By investing in your team's development, you equip them with the tools and confidence to handle change more efficiently, ultimately reducing its overall impact on the project.</p>  <p><b>Free Insights Report and Quiz</b></p>
 
-<p>To further assist you in mastering change management, we’ve prepared a free insights report and a short quiz to assess your current change management practices.  Download the report <p>Related reading: <a href="/posts/post-11">7 tips from procurement about change orders</a></p> to gain deeper insights and take the quiz to pinpoint areas for improvement in your approach to change orders. This will help you identify weaknesses and strengthen your project management capabilities.</p>  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Visual Learning Resource</p>  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Download our Hidden Costs Infographic - perfect for team meetings and presentations!</p>  <a href="/resources/infographics" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download Infographic →</a>
+<p>To further assist you in mastering change management, we’ve prepared a free insights report and a short quiz to assess your current change management practices.  Download the report <p>Related reading: <a href="/posts/post-11">7 tips from procurement about change orders</a></p> to gain deeper insights and take the quiz to pinpoint areas for improvement in your approach to change orders. This will help you identify weaknesses and strengthen your project management capabilities.</p>  
+
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #FF6600; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
+<h4 style="color: #FF6600; margin: 0 0 12px 0; font-family: 'Courier New', monospace;">🏗️ Visual Summary</h4>
+<h3 style="color: #ffffff; margin: 0 0 16px 0;">Quick Reference Infographic</h3>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; opacity: 0.9;">Get the key takeaways from this article in a visual format perfect for sharing or quick reference.</p>
+<a href="/resources/infographics/post-15/infographic.html" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">View Infographic →</a>
 </div>
+
 <p><b>Related Articles</b></p>
 
 <ul>

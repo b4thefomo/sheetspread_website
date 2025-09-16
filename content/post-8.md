@@ -1,6 +1,4 @@
 7 tips from project managers about change orders
-
-
 <div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
     <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -35,11 +33,20 @@
 </ul>
 
 <p><b>Designing a Lean Change Control Process</b></p>
+
+
 <p>A lightweight but rigorous workflow converts chaos into clarity. Keep the friction proportional to the impact; fast-track the small, scrutinize the large.</p>
 <ul>  <li><b>Intake:</b> Standardize a request form capturing problem statement, rationale, affected deliverables, urgency, constraints, and acceptance criteria. Require attachments (drawings, user stories, regulations).</li>  <li><b>Triage:</b> Classify as defect, enhancement, scope gap, or compliance. Apply thresholds for fast-track vs. full analysis. Reject duplicates and out-of-scope ideas early.</li>  <li><b>Impact analysis:</b> Reference baselines (WBS, schedule, budget). Identify dependencies, critical-path effects, resource conflicts, and risks. Provide options (e. g., gold, silver, bronze) with rough-order-of-magnitude estimates and lead-times.</li>  <li><b>Decision and approvals:</b> Use a clear authority matrix (PM, sponsor, steering committee) with monetary/time thresholds. Capture decisions, conditions, and funding sources. Enable digital sign-offs for speed and auditability.</li>  <li><b>Implementation and baseline updates:</b> Insert the approved change into plans, update the change log, communicate assignments, and adjust scope, schedule, and budget baselines. Include test plans and definition of done.</li>  <li><b>Verification and closeout:</b> Confirm deliverables, validate benefits, and ensure documentation completeness. Close risks/actions created by the change.</li>  <li><b>Governance cadence:</b> Review the change register in weekly/biweekly forums. Spotlight trends, bottlenecks, and cumulative impact.</li>
 </ul>
 
 <p><b>Estimating Impact: Scope, Schedule, Cost, and Risk</b></p>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">
+  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Downloadable Presentation Slides</p>
+  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Get our comprehensive 16-slide presentation with key takeaways and actionable insights!</p>
+  <a href="/resources/slides/post-8/slides.html" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;" target="_blank">View Presentation (16 slides) →</a>
+</div>
+
 <p>Credible decisions depend on credible estimates. Anchor analysis in baselines and quantify uncertainty.</p>
 <ul>  <li><b>Scope:</b> Decompose the change using the WBS. Map to specific work packages, interfaces, and nonfunctional requirements (performance, security, compliance).</li>  <li><b>Schedule:</b> Perform critical-path checks. Apply three-point estimates (optimistic/most likely/pessimistic), resource-leveling assumptions, and vendor lead-times. Document sequencing changes and buffer consumption.</li>  <li><b>Cost:</b> Estimate labor, materials, subcontractors, licenses, and overhead. Separate <i>contingency</i> (known-unknowns tied to the estimate) from <i>management reserve</i> (unknown-unknowns at the portfolio level). Define pricing (T&M vs. fixed), markups, and change order minimums.</li>  <li><b>Risk:</b> Use probability–impact and expected monetary value. Record new risks and risk responses (avoid, mitigate, transfer, accept). Adjust contingency accordingly.</li>  <li><b>Commercial and compliance:</b> Respect notice periods, waiver risks, and contractual change clauses. Specify effects on milestones, warranties, SLAs, and acceptance tests.</li>  <li><b>Decision-ready options:</b> Present at least two viable alternatives plus a do-nothing case, each with scope, schedule, cost deltas, and risk profile, so sponsors can choose trade-offs consciously.</li>
 </ul>
@@ -47,8 +54,15 @@
 <p><b>Stakeholder Alignment, Communication, and Documentation</b></p>
 <p>Even perfect analysis fails without buy-in. Communication turns numbers into decisions.</p>
 <ul>  <li><b>Roles and responsibilities:</b> Clarify who requests, who analyzes, who approves, and who executes (RACI). Avoid “decision by email drift.”</li>  <li><b>Client-facing narrative:</b> Lead with the business problem, explain options and impacts in plain language, and state the recommendation and rationale. Use executive summaries for speed.</li>  <li><b>Negotiation and expectations:</b> Practice give–get trade-offs (scope vs. time vs. budget). Guard against scope creep by tying changes to measurable outcomes and acceptance criteria.</li>  <li><b>Documentation discipline:</b> Maintain a living change log with unique IDs, originator, status, baseline deltas, approvals, and links to requirements and test cases. Version control all artifacts for an auditable trail.</li>  <li><b>Visibility:</b> Publish a simple dashboard: open changes by phase, average cycle time, cumulative cost/schedule impact, and top blockers. Transparency reduces friction.</li>
-</ul>  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Visual Learning Resource</p>  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Download our Project Manager's Change Order Infographic - perfect for team meetings and presentations!</p>  <a href="/resources/infographics#project-manager" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download Infographic →</a>
+</ul>  
+
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #FF6600; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
+<h4 style="color: #FF6600; margin: 0 0 12px 0; font-family: 'Courier New', monospace;">🏗️ Visual Summary</h4>
+<h3 style="color: #ffffff; margin: 0 0 16px 0;">Quick Reference Infographic</h3>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; opacity: 0.9;">Get the key takeaways from this article in a visual format perfect for sharing or quick reference.</p>
+<a href="/resources/infographics/post-8/infographic.html" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">View Infographic →</a>
 </div>
+
 <p><b>Related Articles</b></p>
 
 <ul>

@@ -1,134 +1,215 @@
-const { GoogleGenAI } = require("@google/genai");
-const fs = require("node:fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 
-async function generateInfographic(topic, perspective, fileName) {
-  try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey || apiKey === 'your_gemini_api_key_here') {
-      console.error('⚠️  Please set your GEMINI_API_KEY in .env file');
-      return null;
+class InfographicGenerator {
+  constructor() {
+    this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    this.templatePath = path.join(process.cwd(), 'resources', 'infographics', 'templates', 'infographic-template.html');
+    this.outputDir = path.join(process.cwd(), 'public', 'resources', 'infographics');
+  }
+
+  async extractInfographicData(postContent, postTitle) {
+    console.log(`🤖 Extracting infographic data for: ${postTitle}`);
+    
+    const model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
+    
+    const prompt = `Analyze this blog post content and extract data for an infographic:
+
+Title: ${postTitle}
+Content: ${postContent}
+
+Extract the following in JSON format:
+{
+  "stats": [
+    {"number": "3-5", "label": "Key Benefits"},
+    {"number": "15%", "label": "Cost Reduction"},
+    {"number": "24hrs", "label": "Processing Time"},
+    {"number": "100%", "label": "Documentation"}
+  ],
+  "keyPoints": [
+    {"icon": "⚡", "text": "Process changes quickly and efficiently"},
+    {"icon": "💰", "text": "Control costs with proper documentation"},
+    {"icon": "🎯", "text": "Focus on value-driven decisions"},
+    {"icon": "🔄", "text": "Implement systematic workflows"},
+    {"icon": "📊", "text": "Track performance metrics"},
+    {"icon": "🤝", "text": "Maintain stakeholder relationships"}
+  ]
+}
+
+Requirements:
+- Extract 4 key statistics or metrics (can be numbers, percentages, timeframes)
+- Create exactly 6 key points with relevant construction/management icons
+- Focus on actionable insights and quantifiable benefits
+- Use construction management terminology
+- Keep text concise (under 50 characters per point)
+- If no specific numbers exist, create reasonable estimates based on industry standards
+
+Return only the JSON, no additional text.`;
+
+    try {
+      const result = await model.generateContent(prompt);
+      const jsonText = result.response.text().trim();
+      
+      // Clean up the response to ensure it's valid JSON
+      const cleanedJson = jsonText
+        .replace(/```json\n?/g, '')
+        .replace(/```\n?/g, '')
+        .replace(/^\s*[\r\n]/gm, '');
+      
+      return JSON.parse(cleanedJson);
+    } catch (error) {
+      console.error(`❌ Error extracting infographic data: ${error.message}`);
+      
+      // Return fallback data
+      return {
+        stats: [
+          {"number": "5+", "label": "Key Strategies"},
+          {"number": "25%", "label": "Efficiency Gain"},
+          {"number": "Fast", "label": "Implementation"},
+          {"number": "Pro", "label": "Results"}
+        ],
+        keyPoints: [
+          {"icon": "⚡", "text": "Streamline your processes"},
+          {"icon": "💰", "text": "Control project costs"},
+          {"icon": "🎯", "text": "Focus on outcomes"},
+          {"icon": "🔄", "text": "Improve workflows"},
+          {"icon": "📊", "text": "Measure performance"},
+          {"icon": "🤝", "text": "Build relationships"}
+        ]
+      };
+    }
+  }
+
+  generateStatsSection(stats) {
+    return stats.map(stat => `
+                <div class="stat-card">
+                    <span class="stat-number">${stat.number}</span>
+                    <span class="stat-label">${stat.label}</span>
+                </div>`).join('');
+  }
+
+  generateKeyPointsSection(keyPoints) {
+    return keyPoints.map(point => `
+                    <div class="point-item">
+                        <div class="point-icon">${point.icon}</div>
+                        <div class="point-text">${point.text}</div>
+                    </div>`).join('');
+  }
+
+  async generateInfographic(postSlug) {
+    const postPath = path.join(process.cwd(), 'content', `${postSlug}.md`);
+    
+    if (!fs.existsSync(postPath)) {
+      console.log(`❌ Post file not found: ${postPath}`);
+      return false;
     }
 
-    const ai = new GoogleGenAI({ apiKey });
-    
-    const perspectiveText = perspective ? `from a ${perspective}'s perspective` : '';
-    
-    const prompt = `Create a clean, professional infographic ${perspectiveText} about: ${topic}.
-    
-    Visual style requirements:
-    - Clean, modern infographic design with structured layout
-    - Use a grid-based composition with clear sections  
-    - Color palette: Professional blues, teals, and accent colors (orange/green for highlights)
-    - Include icons, charts, graphs, flowcharts, or diagrams
-    - Use geometric shapes and clean lines
-    - Visual hierarchy with different sized elements
-    - Data visualization elements (pie charts, bar graphs, process flows)
-    - Professional business style, not cartoon
-    - Minimalist with plenty of white space
-    - Include visual representations of concepts (NOT text)
-    - Use symbols, icons, and visual metaphors
-    - Modern flat design aesthetic
-    
-    CRITICAL: This must be a VISUAL infographic using only graphics, icons, charts, and visual elements. 
-    ABSOLUTELY NO TEXT, NO WORDS, NO LETTERS, NO NUMBERS, NO LABELS anywhere in the image.
-    Create visual representations of data and concepts through icons, symbols, and graphics only.`;
-
-    console.log(`📊 Generating infographic for: ${topic}`);
-    if (perspective) {
-      console.log(`   Perspective: ${perspective}`);
-    }
-    console.log(`   Style: Professional business infographic\n`);
-
-    const response = await ai.models.generateImages({
-      model: 'imagen-4.0-generate-001',
-      prompt: prompt,
-      config: {
-        numberOfImages: 1,
-        aspectRatio: '3:4', // Vertical infographic format
-      },
-    });
-
-    if (response.generatedImages && response.generatedImages.length > 0) {
-      const generatedImage = response.generatedImages[0];
-      if (!generatedImage.image || !generatedImage.image.imageBytes) {
-        console.log(`⚠️ No image data received`);
-        return null;
+    try {
+      console.log(`🎯 Generating infographic for: ${postSlug}`);
+      
+      const postContent = fs.readFileSync(postPath, 'utf-8');
+      const lines = postContent.split('\n');
+      const postTitle = lines[0].trim().replace(/\[.*?\]/g, '').trim();
+      
+      // Extract infographic data using AI
+      const infographicData = await this.extractInfographicData(postContent, postTitle);
+      
+      // Read template
+      const template = fs.readFileSync(this.templatePath, 'utf-8');
+      
+      // Generate sections
+      const statsSection = this.generateStatsSection(infographicData.stats);
+      const keyPointsSection = this.generateKeyPointsSection(infographicData.keyPoints);
+      
+      // Replace placeholders
+      let infographicHtml = template
+        .replace(/{{POST_TITLE}}/g, postTitle)
+        .replace(/{{POST_SLUG}}/g, postSlug)
+        .replace(/{{STATS_SECTION}}/g, statsSection)
+        .replace(/{{KEY_POINTS_SECTION}}/g, keyPointsSection);
+      
+      // Ensure output directory exists
+      const outputPath = path.join(this.outputDir, postSlug);
+      if (!fs.existsSync(outputPath)) {
+        fs.mkdirSync(outputPath, { recursive: true });
       }
       
-      const imgBytes = generatedImage.image.imageBytes;
-      const buffer = Buffer.from(imgBytes, "base64");
+      // Save infographic
+      const infographicPath = path.join(outputPath, 'infographic.html');
+      fs.writeFileSync(infographicPath, infographicHtml);
       
-      // Convert to JPEG using Sharp
-      const sharp = require('sharp');
-      const jpegBuffer = await sharp(buffer)
-        .jpeg({ quality: 90 })
-        .toBuffer();
+      // Save data for reference
+      const dataPath = path.join(outputPath, 'infographic-data.json');
+      fs.writeFileSync(dataPath, JSON.stringify({
+        title: postTitle,
+        slug: postSlug,
+        generatedAt: new Date().toISOString(),
+        ...infographicData
+      }, null, 2));
       
-      // Ensure directory exists
-      const outputDir = './public/infographics';
-      if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
-      }
+      console.log(`✅ Infographic generated: ${infographicPath}`);
+      return true;
       
-      const filePath = path.join(outputDir, fileName);
-      fs.writeFileSync(filePath, jpegBuffer);
-      
-      const stats = fs.statSync(filePath);
-      console.log(`✅ Infographic saved successfully!`);
-      console.log(`   File: ${filePath}`);
-      console.log(`   Size: ${(stats.size / 1024).toFixed(2)} KB\n`);
-      
-      return fileName;
-    } else {
-      console.log(`⚠️ No infographic was generated\n`);
-      return null;
+    } catch (error) {
+      console.error(`❌ Error generating infographic for ${postSlug}:`, error.message);
+      return false;
     }
-  } catch (error) {
-    console.error(`❌ Error generating infographic:`, error.message || error);
-    return null;
+  }
+
+  async generateAllInfographics() {
+    console.log('🎯 Generating infographics for all posts...\n');
+    
+    const contentDir = path.join(process.cwd(), 'content');
+    const postFiles = fs.readdirSync(contentDir)
+      .filter(file => file.match(/^post-\d+\.md$/))
+      .sort((a, b) => {
+        const numA = parseInt(a.match(/\d+/)[0]);
+        const numB = parseInt(b.match(/\d+/)[0]);
+        return numA - numB;
+      });
+    
+    let successCount = 0;
+    
+    for (const file of postFiles) {
+      const postSlug = file.replace('.md', '');
+      const success = await this.generateInfographic(postSlug);
+      if (success) successCount++;
+      
+      // Small delay to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    console.log(`\n🎉 Infographic generation complete!`);
+    console.log(`   Generated: ${successCount}/${postFiles.length} infographics`);
+    
+    return successCount;
   }
 }
 
-async function generateTestInfographics() {
-  console.log('🚀 Starting infographic generation tests...\n');
-  console.log('=' .repeat(60) + '\n');
+// CLI usage
+async function main() {
+  const args = process.argv.slice(2);
+  const generator = new InfographicGenerator();
   
-  // Test 1: Supplier perspective infographic
-  const supplier = await generateInfographic(
-    'Change Order Management Best Practices: Cost Recovery, Documentation Requirements, and Negotiation Strategies',
-    'supplier',
-    'change-order-supplier-infographic.jpeg'
-  );
+  if (args.length === 0) {
+    console.log('📋 Usage:');
+    console.log('  Generate all: node scripts/generateInfographics.js all');
+    console.log('  Generate one: node scripts/generateInfographics.js post-15');
+    return;
+  }
   
-  // Add delay between requests
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  
-  // Test 2: Project Manager perspective infographic  
-  const projectManager = await generateInfographic(
-    'Change Order Management Workflow: Planning, Tracking, Communication, and Risk Mitigation Strategies',
-    'project manager',
-    'change-order-pm-infographic.jpeg'
-  );
-  
-  console.log('=' .repeat(60));
-  console.log('\n🎉 Infographic generation tests complete!');
-  
-  const results = [];
-  if (supplier) results.push(`   ✅ Supplier infographic: public/infographics/${supplier}`);
-  if (projectManager) results.push(`   ✅ Project Manager infographic: public/infographics/${projectManager}`);
-  
-  if (results.length > 0) {
-    console.log('\nGenerated infographics:');
-    results.forEach(r => console.log(r));
+  if (args[0] === 'all') {
+    await generator.generateAllInfographics();
+  } else {
+    const postSlug = args[0];
+    await generator.generateInfographic(postSlug);
   }
 }
 
-// Export for use in other scripts
-module.exports = { generateInfographic };
-
-// Run if called directly
 if (require.main === module) {
-  generateTestInfographics();
+  main().catch(console.error);
 }
+
+module.exports = { InfographicGenerator };

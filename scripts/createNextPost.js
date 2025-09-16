@@ -40,19 +40,26 @@ async function createNextPost() {
     
     const contentPrompt = `As an copywriting expert in the style of david ogilvy, write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective. 
 
-    Format requirements:
+    CRITICAL FORMAT REQUIREMENTS:
     - Start with the title as plain text (no markdown heading)
-    - DO NOT include any image tags in the content
+    - ⚠️  NEVER INCLUDE IMAGE TAGS - Images are handled automatically by Next.js
+    - ⚠️  NO <img> tags of any kind in the content body
     - Start immediately with an italicized introduction paragraph in <p><i>...</i></p> tags
     - Use <p><b>Section Headings</b></p> for main sections
     - Use HTML <p>, <ul>, <li>, <b>, <i> tags throughout (no markdown)
     - Include 6-8 main sections with practical, actionable content
-    - Add 3 resource placeholders throughout the content: {{RESOURCE_PLACEHOLDER_1}}, {{RESOURCE_PLACEHOLDER_2}}, {{RESOURCE_PLACEHOLDER_3}}
+    - Add 2 resource placeholders throughout the content: {{RESOURCE_PLACEHOLDER_1}}, {{RESOURCE_PLACEHOLDER_2}}
     - Add internal linking placeholders: {{INTERNAL_LINK_1}}, {{INTERNAL_LINK_2}}
+    - Include a <p><b>Related Articles</b></p> section before the conclusion with placeholder links
     - End with a <p><b>Conclusion</b></p> section
     - Write in professional, authoritative tone
     - Include specific examples, tips, and best practices
     - Make it comprehensive (2000+ words)
+    
+    IMPORTANT REMINDERS:
+    - Post thumbnails are automatically displayed by the blog layout
+    - Downloadable slides with key takeaways will be automatically added during processing
+    - DO NOT add any image references in the post body content
     
     Topic: ${nextPost.title}
     Perspective: ${nextPost.perspective || 'general'}
@@ -140,9 +147,22 @@ async function createNextPost() {
     const { sanitizePost } = require('./sanitizeContent');
     sanitizePost(nextPost.id);
 
+    // Generate infographic
+    console.log('\n📊 Generating infographic...');
+    const { InfographicGenerator } = require('./generateInfographics');
+    const infographicGenerator = new InfographicGenerator();
+    const infographicSuccess = await infographicGenerator.generateInfographic(nextPost.id);
+    
+    if (infographicSuccess) {
+      console.log(`✅ Infographic generated for ${nextPost.id}`);
+    } else {
+      console.log(`⚠️ Failed to generate infographic for ${nextPost.id}`);
+    }
+
     console.log('\n🎉 Post creation complete!');
     console.log(`   Blog: content/${nextPost.id}.md`);
     console.log(`   Image: public/${nextPost.id}.jpeg`);
+    console.log(`   Infographic: public/resources/infographics/${nextPost.id}/infographic.html`);
     console.log(`   Status: Updated in content-calendar.json`);
     
   } catch (error) {

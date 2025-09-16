@@ -1,6 +1,4 @@
 The Most Common Drivers of Change Orders (and How to Anticipate Them) [+Free Insights Report and Quiz]
-
-
 <div style="background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #E2E8F0;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
     <div style="width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -27,20 +25,19 @@ The Most Common Drivers of Change Orders (and How to Anticipate Them) [+Free Ins
       View Transcript
     </a>
   </div>
-</div>
 
 <p><b>Understanding the Impact of Change Orders</b></p>
 
 <p>Before diving into the specifics, it's crucial to understand the far-reaching consequences of poorly managed change orders.  They can disrupt project timelines, leading to missed deadlines and penalties.  Increased costs, often exceeding initial budget projections, can strain project resources and impact profitability.  Furthermore, the constant renegotiation and approval process associated with change orders can create friction among stakeholders, damaging relationships and hindering collaboration.  To avoid these pitfalls, a proactive and well-defined change management process is essential. 
-<div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 24px; margin: 24px 0;">
-<h4 style="color: #0891b2; margin: 0 0 12px 0;">📊 Free Resource</h4>
-<h3 style="margin: 0 0 8px 0;"><a href="/resources/change-order-management" style="color: #1f2937; text-decoration: none;">Change Order Management: A Supplier's Perspective</a></h3>
-<p style="color: #6b7280; margin: 0 0 16px 0; font-size: 14px;">Description: Comprehensive guide on managing change orders effectively from a supplier's point of view, including best practices and strategies...</p>
-<a href="/resources/change-order-management" style="background: #0891b2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 500; display: inline-block;">Download Free Resource →</a>
-</div> provides an excellent overview of best practices.</p>  <p><b>1. Incomplete or Ambiguous Project Scope</b></p>
 
 <p>One of the most prevalent causes of change orders stems from an inadequately defined project scope.  Vague descriptions, missing details, or assumptions left unverified can lead to misunderstandings and necessitate costly revisions later in the project lifecycle.  For example, if the specifications for a building's electrical system are unclear, it might lead to unexpected rework and associated change orders.  </p>
 <p><b>Best Practice:</b>  Invest time in thorough scope definition. Use detailed documentation, visual aids (e. g., diagrams, mockups), and collaborative workshops involving all stakeholders to ensure everyone is on the same page. Conduct a thorough scope review before initiating the project.  </p>  <p><b>2. Design Changes and Revisions</b></p>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">
+  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Downloadable Presentation Slides</p>
+  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Get our comprehensive 16-slide presentation with key takeaways and actionable insights!</p>
+  <a href="/resources/slides/post-14/slides.html" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;" target="_blank">View Presentation (16 slides) →</a>
+</div>
 
 <p>Design changes, often driven by client requests or newly discovered constraints, are a frequent source of change orders. These might range from minor aesthetic alterations to significant structural modifications.  For instance, a client might decide to upgrade materials mid-project, impacting both cost and schedule.  </p>
 <p><b>Best Practice:</b>  Establish a formal change request process that clearly outlines the steps for proposing, evaluating, and approving design modifications.  Implement rigorous design reviews to identify potential issues early on.  Consider using design software that allows for easy collaboration and version control. </p>  <p><b>3. Unforeseen Site Conditions</b></p>
@@ -66,8 +63,15 @@ The Most Common Drivers of Change Orders (and How to Anticipate Them) [+Free Ins
 
 <p>While some change orders are unavoidable, many can be anticipated and mitigated through proactive measures.  This includes thorough planning, risk assessment, and effective communication.  <p>For more insights, see our guide on <a href="/posts/post-10">7 tips from clients about change orders</a>.</p> offers valuable insights into risk management techniques.  By meticulously planning each stage of the project, anticipating potential problems and addressing them upfront,  you can significantly reduce the frequency and impact of change orders.  </p>  <p><b>Free Insights Report and Quiz</b></p>
 
-<p>To further enhance your understanding of change order management, we invite you to download our free insights report, which provides in-depth analysis and practical strategies.  Also, take our short quiz to assess your current change order management practices and identify areas for improvement.  <p>Related reading: <a href="/posts/post-11">7 tips from procurement about change orders</a></p> will take you directly to the resources.  </p>  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; margin: 32px 0; text-align: center;">  <p style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 12px;">📊 Visual Learning Resource</p>  <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Download our Change Order Drivers Infographic - perfect for team meetings and presentations!</p>  <a href="/resources/infographics" style="display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download Infographic →</a>
+<p>To further enhance your understanding of change order management, we invite you to download our free insights report, which provides in-depth analysis and practical strategies.  Also, take our short quiz to assess your current change order management practices and identify areas for improvement.  <p>Related reading: <a href="/posts/post-11">7 tips from procurement about change orders</a></p> will take you directly to the resources.  </p>  
+
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #FF6600; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;">
+<h4 style="color: #FF6600; margin: 0 0 12px 0; font-family: 'Courier New', monospace;">🏗️ Visual Summary</h4>
+<h3 style="color: #ffffff; margin: 0 0 16px 0;">Quick Reference Infographic</h3>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; opacity: 0.9;">Get the key takeaways from this article in a visual format perfect for sharing or quick reference.</p>
+<a href="/resources/infographics/post-14/infographic.html" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">View Infographic →</a>
 </div>
+
 <p><b>Related Articles</b></p>
 
 <ul>
@@ -85,4 +89,3 @@ The Most Common Drivers of Change Orders (and How to Anticipate Them) [+Free Ins
 <p><b>📋 Helpful Tool:</b></p>
 <p><a href="/resources/weather-resources" style="color: #0891b2; font-weight: 500;">Weather Resources for Sailors</a></p>
 <p style="font-size: 14px; color: #6b7280;">Description: Comprehensive weather forecasting tools and interpretation guides for marine conditions...</p>
-</div>  offers further reading on project management best practices.</p>

@@ -16,7 +16,10 @@
     "generate-podcast": "node scripts/generatePodcast.js",
     "add-podcast-players": "node scripts/addPodcastPlayers.js",
     "update-header-images": "node scripts/updateHeaderImages.js",
-    "test-automation": "node -e \"console.log('Testing automation setup...'); const fs = require('fs'); const cal = JSON.parse(fs.readFileSync('./content-calendar.json')); const next = cal.posts.find(p => p.status !== 'Done'); console.log(next ? '✅ Next post to generate: ' + next.id : '⚠️  No posts to generate');\""
+    "test-automation": "node -e \"console.log('Testing automation setup...'); const fs = require('fs'); const cal = JSON.parse(fs.readFileSync('./content-calendar.json')); const next = cal.posts.find(p => p.status !== 'Done'); console.log(next ? '✅ Next post to generate: ' + next.id : '⚠️  No posts to generate');\"",
+    "generate-slides": "node scripts/generateSlides.js",
+    "generate-comprehensive-slides": "node scripts/generateComprehensiveSlides.js",
+    "add-slide-embeds": "node scripts/addSlideEmbeds.js"
   },
   "dependencies": {
     "@google/genai": "^1.16.0",

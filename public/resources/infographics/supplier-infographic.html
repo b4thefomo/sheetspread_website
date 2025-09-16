@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Order Management - Supplier Perspective</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+        .container { width: 800px; margin: 0 auto; background: linear-gradient(to bottom right, #EBF8FF, #E6FFFA); padding: 32px; }
+        .card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .header { text-align: center; margin-bottom: 40px; }
+        .title { font-size: 28px; font-weight: bold; color: #1F2937; margin-bottom: 8px; }
+        .subtitle { font-size: 18px; color: #2563EB; font-weight: 600; }
+        .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+        .metric { text-align: center; padding: 24px; border-radius: 12px; }
+        .metric-blue { background: #EFF6FF; }
+        .metric-green { background: #F0FDF4; }
+        .metric-orange { background: #FFF7ED; }
+        .metric-icon { width: 64px; height: 64px; margin: 0 auto 12px; }
+        .metric-value { font-size: 28px; font-weight: bold; color: #1F2937; }
+        .metric-label { font-size: 12px; color: #4B5563; margin-top: 4px; }
+        .workflow { margin-bottom: 40px; }
+        .workflow-title { font-size: 20px; font-weight: bold; color: #1F2937; text-align: center; margin-bottom: 24px; }
+        .workflow-steps { display: flex; align-items: center; justify-content: space-between; }
+        .step { flex: 1; display: flex; flex-direction: column; align-items: center; }
+        .step-circle { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+        .step-label { font-size: 14px; font-weight: 500; text-align: center; }
+        .arrow { width: 32px; height: 32px; color: #9CA3AF; }
+        .practices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px; }
+        .practice-box { padding: 24px; border-radius: 12px; }
+        .practice-blue { background: linear-gradient(to right, #DBEAFE, #EFF6FF); }
+        .practice-green { background: linear-gradient(to right, #D1FAE5, #F0FDF4); }
+        .practice-title { font-weight: bold; color: #1F2937; margin-bottom: 16px; display: flex; align-items: center; }
+        .practice-icon { width: 24px; height: 24px; margin-right: 8px; }
+        .practice-item { font-size: 14px; color: #374151; margin-bottom: 8px; display: flex; align-items: start; }
+        .bullet { margin-right: 8px; }
+        .risk-matrix { background: #F9FAFB; padding: 24px; border-radius: 12px; }
+        .risk-title { font-weight: bold; color: #1F2937; text-align: center; margin-bottom: 16px; }
+        .risk-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .risk-item { text-align: center; }
+        .risk-box { width: 64px; height: 64px; border-radius: 8px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; }
+        .risk-low { background: #BBF7D0; color: #15803D; }
+        .risk-medium { background: #FDE68A; color: #A16207; }
+        .risk-high { background: #FECACA; color: #B91C1C; }
+        .risk-label { font-size: 11px; color: #4B5563; }
+        .risk-desc { font-size: 11px; margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1 class="title">Change Order Management</h1>
+                <p class="subtitle">Supplier Perspective</p>
+            </div>
+
+            <div class="metrics">
+                <div class="metric metric-blue">
+                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
+                        <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <div class="metric-value">15%</div>
+                    <div class="metric-label">Average Margin Impact</div>
+                </div>
+                
+                <div class="metric metric-green">
+                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <div class="metric-value">72hr</div>
+                    <div class="metric-label">Response Time Goal</div>
+                </div>
+                
+                <div class="metric metric-orange">
+                    <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2">
+                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    <div class="metric-value">3x</div>
+                    <div class="metric-label">Documentation Required</div>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h2 class="workflow-title">Change Order Workflow</h2>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-circle" style="background: #3B82F6;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <span class="step-label">Request Receipt</span>
+                    </div>
+                    
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+                    
+                    <div class="step">
+                        <div class="step-circle" style="background: #14B8A6;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <span class="step-label">Cost Analysis</span>
+                    </div>
+                    
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+                    
+                    <div class="step">
+                        <div class="step-circle" style="background: #10B981;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                        </div>
+                        <span class="step-label">Quote Submission</span>
+                    </div>
+                    
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+                    
+                    <div class="step">
+                        <div class="step-circle" style="background: #F97316;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                            </svg>
+                        </div>
+                        <span class="step-label">Negotiation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practices">
+                <div class="practice-box practice-blue">
+                    <h3 class="practice-title">
+                        <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Documentation Essentials
+                    </h3>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #2563EB;">•</span>
+                        Original scope reference
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #2563EB;">•</span>
+                        Detailed cost breakdown
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #2563EB;">•</span>
+                        Timeline impact analysis
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #2563EB;">•</span>
+                        Material price quotes
+                    </div>
+                </div>
+                
+                <div class="practice-box practice-green">
+                    <h3 class="practice-title">
+                        <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Pricing Strategy
+                    </h3>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #16A34A;">•</span>
+                        Include all indirect costs
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #16A34A;">•</span>
+                        Factor in risk premium
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #16A34A;">•</span>
+                        Document labor hours
+                    </div>
+                    <div class="practice-item">
+                        <span class="bullet" style="color: #16A34A;">•</span>
+                        Apply standard markups
+                    </div>
+                </div>
+            </div>
+
+            <div class="risk-matrix">
+                <h3 class="risk-title">Risk Assessment Matrix</h3>
+                <div class="risk-items">
+                    <div class="risk-item">
+                        <div class="risk-box risk-low">L</div>
+                        <div class="risk-label">Low Risk</div>
+                        <p class="risk-desc">Standard markup</p>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-box risk-medium">M</div>
+                        <div class="risk-label">Medium Risk</div>
+                        <p class="risk-desc">+5-10% premium</p>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-box risk-high">H</div>
+                        <div class="risk-label">High Risk</div>
+                        <p class="risk-desc">+15%+ premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
