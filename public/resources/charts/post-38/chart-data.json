@@ -1,0 +1,50 @@
+{
+  "charts": [
+    {
+      "type": "bar",
+      "title": "Impact of Inadequate Change Order Processes",
+      "placement": "early",
+      "value": "This chart visually represents the significant problem the article addresses – the high percentage of disputes arising from poorly managed change orders. It immediately grabs the reader's attention and establishes the need for a solution.",
+      "data": [
+        {
+          "label": "Change Order Disputes Resolved Successfully",
+          "value": 20,
+          "description": "Percentage of disputes resolved effectively through clear communication and proper processes"
+        },
+        {
+          "label": "Change Order Disputes Leading to Conflicts",
+          "value": 80,
+          "description": "Percentage of disputes resulting from poor communication, ambiguity, and lack of proper documentation"
+        }
+      ]
+    },
+    {
+      "type": "process-flow",
+      "title": "The 20-Minute Meeting: A Step-by-Step Guide",
+      "placement": "mid-article",
+      "value": "This process flow diagram visually outlines the steps of the 20-minute meeting, making the suggested framework easy to understand and follow.  It clarifies the process described in the text, enhancing comprehension and actionability.",
+      "data": [
+        {
+          "label": "Review and Clarification (Minutes 0-5)",
+          "value": null,
+          "description": "Review proposed changes; address questions and concerns."
+        },
+        {
+          "label": "Impact Assessment (Minutes 5-10)",
+          "value": null,
+          "description": "Discuss impact on timeline and budget; use visual aids to illustrate adjustments."
+        },
+        {
+          "label": "Agreement and Documentation (Minutes 10-15)",
+          "value": null,
+          "description": "Agree on changes; document decisions meticulously including cost and schedule impact."
+        },
+        {
+          "label": "Next Steps and Assignments (Minutes 15-20)",
+          "value": null,
+          "description": "Assign responsibilities; define next steps and deadlines.  Confirm everyone understands their role and timelines."
+        }
+      ]
+    }
+  ]
+}

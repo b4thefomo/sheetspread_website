@@ -1,49 +1,49 @@
 {
-  "title": "The 20-Minute Meeting That Prevents 80% of Change Order Disputes",
+  "title": "<script src=\"https://cdn. jsdelivr. net/npm/chart. js\"></script>",
   "slug": "post-38",
-  "generatedAt": "2025-09-17T00:25:30.456Z",
+  "generatedAt": "2025-09-17T14:30:49.721Z",
   "stats": [
     {
       "number": "80%",
       "label": "Reduction in Disputes"
     },
     {
-      "number": "20 min",
-      "label": "Proactive Alignment Meeting"
+      "number": "20-Min",
+      "label": "Change Resolution Framework"
     },
     {
       "number": "100%",
-      "label": "Change Documentation"
+      "label": "Documented Agreements"
     },
     {
-      "number": "<24hrs",
-      "label": "Initial Change Review"
+      "number": "15%",
+      "label": "Potential Cost Savings"
     }
   ],
   "keyPoints": [
     {
-      "icon": "🤝",
-      "text": "Align stakeholders from the start"
-    },
-    {
-      "icon": "✍️",
-      "text": "Document and sign off on all changes"
+      "icon": "⚡",
+      "text": "Streamline change order approval"
     },
     {
       "icon": "💰",
-      "text": "Prevent scope creep & budget overruns"
+      "text": "Prevent disputes & control costs"
     },
     {
-      "icon": "📊",
-      "text": "Use visual aids to clarify scope"
+      "icon": "🤝",
+      "text": "Improve client communication & trust"
     },
     {
-      "icon": "💬",
-      "text": "Foster proactive, open communication"
+      "icon": "📋",
+      "text": "Ensure clear, binding documentation"
     },
     {
-      "icon": "⏱️",
-      "text": "Run efficient, structured meetings"
+      "icon": "🔄",
+      "text": "Implement a systematic CO workflow"
+    },
+    {
+      "icon": "🎯",
+      "text": "Mitigate project timeline & budget risk"
     }
   ]
 }

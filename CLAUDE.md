@@ -52,6 +52,11 @@ The blog covers AI-powered location intelligence topics including:
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality
 
+### Chart Integration Commands
+- `node scripts/addChartEmbeds.js add-all` - Add charts to all posts
+- `node scripts/addChartEmbeds.js add-post [slug]` - Add charts to specific post
+- Charts are automatically added during post generation via `postProcessBlog.js`
+
 ### Key Dependencies
 - Next.js 14.0.0
 - React 18
@@ -137,5 +142,39 @@ The application includes scripts for automated blog post generation:
 6. **Tell a short anecdote**: Begin with a brief, intriguing story that sets the stage for your content
    - Example: "How One Missing Update Cost a PM Their Biggest Client (And How to Prevent It)"
 
+## Chart Asset Integration System
+
+### Overview
+The application includes an automated chart generation and embedding system that adds visual elements to blog posts to break up text walls and improve engagement. Charts are automatically generated from post content during the creation process.
+
+### Chart Types Supported
+- **Donut Charts**: For percentage and statistical breakdowns
+- **Comparison Charts**: For before/after or performance improvements
+- **Timeline Charts**: For implementation schedules and deadlines
+- **Process Flow Charts**: For step-by-step workflows
+
+### Automatic Integration
+Charts are automatically added to posts during creation through the post-processing workflow:
+1. Content is analyzed for chartable data (percentages, dates, process steps)
+2. Appropriate chart types are selected based on data patterns
+3. Charts are embedded at strategic points in the post (after major sections)
+4. Chart.js CDN is included for interactive functionality
+
+### Chart Placement Strategy
+- **Early placement**: Timeline and comparison charts after introduction
+- **Mid-article placement**: Statistical and process flow charts after 2nd section
+- **Maximum 2 charts per post**: To avoid overwhelming readers
+
+### Manual Chart Commands
+- Add charts to all posts: `node scripts/addChartEmbeds.js add-all`
+- Add charts to specific post: `node scripts/addChartEmbeds.js add-post [slug]`
+- Charts are automatically included when creating new posts
+
+### Chart Styling
+Charts use the construction industry color palette:
+- Primary: #FF6600 (Orange)
+- Secondary: #0891b2 (Blue)
+- Accent: #64748b (Gray)
+- Background: #f8fafc (Light Gray)
 
 

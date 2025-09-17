@@ -35,7 +35,10 @@ async function postProcessBlog(postId) {
     
     // Add infographic links automatically
     content = await addInfographicLinksToContent(content, postId);
-    
+
+    // Add chart embeds automatically
+    content = await addChartEmbedsToContent(content, postId);
+
     // Save processed content
     fs.writeFileSync(filePath, content);
     console.log(`\n✅ Post-processing complete for ${postId}`);
@@ -300,6 +303,87 @@ async function addInfographicLinksToContent(content, postId) {
   } catch (error) {
     console.error(`   ❌ Error adding infographic links to ${postId}:`, error.message);
     return content; // Return original content if there's an error
+  }
+}
+
+async function addChartEmbedsToContent(content, postId) {
+  console.log('\n📊 Adding AI-powered chart embeds...');
+
+  try {
+    // Check if charts already exist
+    if (content.includes('<!-- charts-generated -->')) {
+      console.log(`   ✅ ${postId} already has AI-generated charts`);
+      return content;
+    }
+
+    // Use AI-powered chart generation
+    const { AIChartGenerator } = require('./generateAICharts');
+    const generator = new AIChartGenerator();
+
+    // Save the content temporarily to a file for AI processing
+    const fs = require('fs');
+    const matter = require('gray-matter');
+    const postPath = `./content/${postId}.md`;
+
+    // Read the current file to get frontmatter
+    const currentContent = fs.readFileSync(postPath, 'utf-8');
+    const { data } = matter(currentContent);
+
+    // Save the updated content temporarily
+    const tempFile = matter.stringify(content, data);
+    fs.writeFileSync(postPath, tempFile);
+
+    // Generate charts with AI
+    const result = await generator.generateChartsWithAI(postId);
+
+    if (result) {
+      // Read back the updated content with charts
+      const updatedContent = fs.readFileSync(postPath, 'utf-8');
+      const { content: newContent } = matter(updatedContent);
+      console.log(`   ✅ AI successfully generated charts for ${postId}`);
+      return newContent;
+    } else {
+      console.log(`   ℹ️ No suitable charts generated for ${postId}`);
+      return content;
+    }
+
+  } catch (error) {
+    console.error(`   ❌ Error adding AI chart embeds to ${postId}:`, error.message);
+
+    // Fallback to simple chart generation if AI fails
+    try {
+      console.log('   🔄 Attempting fallback chart generation...');
+      const { ChartEmbedder } = require('./addChartEmbeds');
+      const embedder = new ChartEmbedder();
+
+      const chartableData = embedder.extractChartableData(content);
+      if (chartableData.length > 0) {
+        let updatedContent = content;
+        const chartsToAdd = chartableData.slice(0, 2);
+
+        for (const chartData of chartsToAdd) {
+          const chartHtml = embedder.generateChartHtml(chartData, postId);
+          const insertPoint = embedder.findInsertionPoint(updatedContent, chartData.placement);
+
+          const beforeChart = updatedContent.substring(0, insertPoint);
+          const afterChart = updatedContent.substring(insertPoint);
+
+          updatedContent = beforeChart + '\n\n' + chartHtml + '\n' + afterChart;
+        }
+
+        if (!updatedContent.includes('chart.js')) {
+          const chartjsCdn = `<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>`;
+          updatedContent = chartjsCdn + '\n\n' + updatedContent;
+        }
+
+        console.log(`   ✅ Fallback: Added ${chartsToAdd.length} chart(s) to ${postId}`);
+        return updatedContent;
+      }
+    } catch (fallbackError) {
+      console.error(`   ❌ Fallback also failed:`, fallbackError.message);
+    }
+
+    return content; // Return original content if all attempts fail
   }
 }
 
