@@ -1,0 +1,69 @@
+Podcast Transcript
+==================
+
+Here is the blog post transformed into a 4-5 minute podcast conversation.
+
+***
+
+**Podcast Title:** Site-Level Strategy
+**Episode Title:** Why Your Change Estimates Are Off by 47%
+
+**(Intro music with a subtle construction site soundscape, fades quickly)**
+
+**Sarah:** Welcome to Site-Level Strategy, the podcast that cuts through the noise. I’m Sarah Jennings.
+
+**Mike:** And I’m Mike Bishop. Right, Sarah, let's get straight to it. I’ve just seen some research showing that, on average, change estimates are off by a staggering 47%. Is that just academic noise, or are you seeing that in the real world?
+
+**Sarah:** It’s absolutely real, Mike. That 47% figure is consistent across the industry, and it's a chasm that’s costing Tier 1s like yours millions in lost margin, disputes, and client trust.
+
+**Mike:** Okay, so it’s a genuine problem. I want to know why it’s happening and, more importantly, what my teams can do about it on Monday morning.
+
+**Sarah:** Exactly. So today, we're not talking theory. We’re going to cover the three main reasons our numbers are so wrong: underestimating complexity, failing to use historical data, and pure optimism bias. Then we’ll get into three concrete actions you can take to fix it. Sound good?
+
+**Mike:** Perfect. No fluff, just fixes. So, where does it go so wrong? For us, a change request comes in, often with a vague scope, and the pressure is on to price it and get it back to the client yesterday.
+
+**Sarah:** That’s the first domino to fall: underestimation of complexity. We see a simple change—let’s say, relocating a partition wall—and we price the labour and materials for the wall itself. What we miss is the intricate web of dependencies.
+
+**Mike:** You mean the knock-on effects.
+
+**Sarah:** Precisely. We forget to properly account for re-routing the electrical and data cables inside that wall. We don’t price in the fire-stopping adjustments, the temporary works, the dust control measures needed in a live environment, or the overtime required to do it out of hours. Suddenly a £5,000 change order spirals into a £7,500 mess. That’s your 47% right there.
+
+**Mike:** And that’s a simple example. When you're dealing with major structural or M&E changes, that complexity multiplies. It feels like we’re guessing half the time.
+
+**Sarah:** Which brings us to the second major failure: a complete lack of historical data. Most firms, even big ones, are terrible at this. A project finishes, the team disbands, and all the valuable data about what a change *actually* cost is lost in a server folder somewhere.
+
+**Mike:** You’re dead right. We finish a job and we’re straight onto the next tender. There's no systematic ‘lessons learned’ on commercial data. We just rely on the estimator’s gut feeling.
+
+**Sarah:** And that gut feeling is usually wrong. This is the third point: psychological bias. It's called the 'planning fallacy'. We are, by nature, overly optimistic. We assume a best-case scenario for productivity, for lead times, for site access. We don’t properly price in risk.
+
+**Mike:** So we’re pricing for a perfect world that never, ever exists on a construction site. It’s a recipe for failure. Okay, I’m sold on the problem. Let’s get to the solutions. What’s the first practical fix?
+
+**Sarah:** You have to start treating your historical data like an asset. This isn’t complicated. Start a simple, central spreadsheet. For every variation, log the initial estimate against the final, actual cost. And, crucially, a single sentence explaining the variance. Was it unforeseen site conditions? A supplier price hike? Poor productivity?
+
+**Mike:** So when we price the next similar job, we have a real-world baseline. Not a guess. I like that. It’s simple enough that people might actually do it. What’s next?
+
+**Sarah:** Number two: kill the ‘lone wolf’ estimator. For any change order over, say, £10,000, it should be mandatory for the estimator to have a 15-minute review with the site manager or foreman who will actually be building it.
+
+**Mike:** That’s a brilliant point. The foreman is the one who’ll say, ‘Hang on, you can't get that piece of plant into that room without dismantling the doorway first, and that’s not in your price.’
+
+**Sarah:** Exactly. He brings the on-the-ground reality check that prevents those massive misses on complexity and logistics. It closes the gap between the office and the site.
+
+**Mike:** Okay, data and collaboration. What's the third fix?
+
+**Sarah:** Formalise your risk assessment, even on a small scale. Every estimate should have a risk buffer or contingency line item. And you need to be able to justify it. Don’t just add 10% for ‘contingency’. Break it down. ‘Risk of material delay: 20% probability, £1,000 impact. Risk of discovering poor ground conditions: 10% probability, £3,000 impact.’
+
+**Mike:** That changes the conversation with the client. Instead of it looking like we're just adding fluff to the price, we’re being transparent about the known unknowns. It’s a much more professional approach.
+
+**Sarah:** It builds trust and it protects your margin. It forces you to think through the potential problems before they happen, which is the entire point of accurate estimating.
+
+**Mike:** Right, this is good. It’s not about buying expensive new software, it’s about changing process and discipline.
+
+**Sarah:** That's it. So, to wrap up, the three immediate takeaways are: One, start tracking your estimate vs. actuals now. Two, force a conversation between your commercial and operational teams on every significant change. Three, price the risk, don't just hope for the best.
+
+**Mike:** Solid, actionable advice. It’s about building a more resilient, data-driven process. Right, thanks, Sarah. Much to think about and, more importantly, much to implement.
+
+**Sarah:** My pleasure, Mike.
+
+**(Outro music starts and fades in)**
+
+Generated on: 2025-09-17T12:13:11.533Z
