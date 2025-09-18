@@ -1,0 +1,60 @@
+{
+  "charts": [
+    {
+      "type": "comparison",
+      "title": "Change Management Process Speed: Tech vs. Construction",
+      "placement": "mid-article",
+      "value": "This bar chart visually emphasizes the stark contrast in turnaround times between tech industry changes (hours to days) and the significantly longer process in construction (weeks, potentially months). It reinforces the core argument of the blog post by showcasing the key difference in agility.",
+      "data": [
+        {
+          "label": "Tech Industry Change (e.g., bug fix)",
+          "value": "Hours to Days",
+          "description": "Rapid iteration and deployment are common."
+        },
+        {
+          "label": "Construction Change Order",
+          "value": "Weeks to Months",
+          "description": "Involves extensive documentation, negotiation, and potential disputes."
+        }
+      ]
+    },
+    {
+      "type": "process-flow",
+      "title": "Construction Change Order Process Steps",
+      "placement": "late",
+      "value": "This flowchart visually maps out the multi-step process involved in a construction change order, making the complexity and length of the process clear to readers. This visualization makes the abstract concept concrete and helps readers understand why it's so vastly different from tech's agile processes.",
+      "data": [
+        {
+          "label": "Request Submitted",
+          "value": "Step 1",
+          "description": "Initiation of the change order process."
+        },
+        {
+          "label": "Review and Evaluation",
+          "value": "Step 2",
+          "description": "Assessment of the change's impact and feasibility."
+        },
+        {
+          "label": "Negotiation and Approval",
+          "value": "Step 3",
+          "description": "Agreement on cost, timeline, and other terms."
+        },
+        {
+          "label": "Documentation and Legal Review",
+          "value": "Step 4",
+          "description": "Formalizing the changes in legally binding documents."
+        },
+        {
+          "label": "Implementation",
+          "value": "Step 5",
+          "description": "Carrying out the agreed-upon changes."
+        },
+        {
+          "label": "Final Inspection and Payment",
+          "value": "Step 6",
+          "description": "Verification of completion and final settlement."
+        }
+      ]
+    }
+  ]
+}

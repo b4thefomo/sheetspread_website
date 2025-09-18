@@ -1,0 +1,49 @@
+{
+  "title": "<script src=\"https://cdn. jsdelivr. net/npm/chart. js\"></script>",
+  "slug": "post-40",
+  "generatedAt": "2025-09-18T00:24:52.694Z",
+  "stats": [
+    {
+      "number": "4-8",
+      "label": "Weeks for Change Order Approval"
+    },
+    {
+      "number": "15%",
+      "label": "Potential Project Cost Increase"
+    },
+    {
+      "number": "6",
+      "label": "Formal Workflow Steps"
+    },
+    {
+      "number": "3-5",
+      "label": "Required Stakeholder Approvals"
+    }
+  ],
+  "keyPoints": [
+    {
+      "icon": "📝",
+      "text": "Formalize changes with documentation"
+    },
+    {
+      "icon": "💰",
+      "text": "Calculate all cost & schedule impacts"
+    },
+    {
+      "icon": "🤝",
+      "text": "Secure sign-offs from all stakeholders"
+    },
+    {
+      "icon": "⚙️",
+      "text": "Implement a systematic workflow"
+    },
+    {
+      "icon": "⚖️",
+      "text": "Use contracts to mitigate disputes"
+    },
+    {
+      "icon": "💬",
+      "text": "Mandate formal communication channels"
+    }
+  ]
+}
