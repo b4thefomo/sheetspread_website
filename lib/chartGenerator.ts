@@ -24,7 +24,13 @@ export class ChartGenerator {
 
   generateBarChart(data: ChartData, options: ChartOptions = {}): string {
     const { width = 600, height = 400, theme = 'construction' } = options;
-    const colors = theme === 'construction' ? this.constructionColors : {};
+    const colors = theme === 'construction' ? this.constructionColors : {
+      primary: '#3b82f6',
+      secondary: '#1d4ed8',
+      accent: '#64748b',
+      background: '#f8fafc',
+      text: '#1f2937'
+    };
 
     return `
       <div class="chart-container" style="width: 100%; max-width: ${width}px; margin: 0 auto;">
@@ -38,8 +44,8 @@ export class ChartGenerator {
               datasets: [{
                 label: '${data.title}',
                 data: ${JSON.stringify(data.data)},
-                backgroundColor: '${colors.primary || '#3b82f6'}',
-                borderColor: '${colors.secondary || '#1d4ed8'}',
+                backgroundColor: '${colors.primary}',
+                borderColor: '${colors.secondary}',
                 borderWidth: 1
               }]
             },
@@ -49,7 +55,7 @@ export class ChartGenerator {
                 title: {
                   display: true,
                   text: '${data.title}',
-                  color: '${colors.text || '#1f2937'}'
+                  color: '${colors.text}'
                 }
               }
             }
@@ -60,7 +66,13 @@ export class ChartGenerator {
 
   generateDonutChart(data: ChartData, options: ChartOptions = {}): string {
     const { width = 400, height = 400, theme = 'construction' } = options;
-    const colors = theme === 'construction' ? this.constructionColors : {};
+    const colors = theme === 'construction' ? this.constructionColors : {
+      primary: '#3b82f6',
+      secondary: '#1d4ed8',
+      accent: '#64748b',
+      background: '#f8fafc',
+      text: '#1f2937'
+    };
 
     return `
       <div class="chart-container" style="width: 100%; max-width: ${width}px; margin: 0 auto;">
@@ -83,7 +95,7 @@ export class ChartGenerator {
                 title: {
                   display: true,
                   text: '${data.title}',
-                  color: '${colors.text || '#1f2937'}'
+                  color: '${colors.text}'
                 },
                 legend: {
                   position: 'bottom'
@@ -97,7 +109,13 @@ export class ChartGenerator {
 
   generateTimelineChart(data: ChartData, options: ChartOptions = {}): string {
     const { width = 800, height = 300, theme = 'construction' } = options;
-    const colors = theme === 'construction' ? this.constructionColors : {};
+    const colors = theme === 'construction' ? this.constructionColors : {
+      primary: '#3b82f6',
+      secondary: '#1d4ed8',
+      accent: '#64748b',
+      background: '#f8fafc',
+      text: '#1f2937'
+    };
 
     return `
       <div class="timeline-chart" style="width: 100%; max-width: ${width}px; margin: 0 auto; padding: 20px;">
@@ -120,7 +138,13 @@ export class ChartGenerator {
 
   generateComparisonChart(data: ChartData, options: ChartOptions = {}): string {
     const { width = 600, height = 400, theme = 'construction' } = options;
-    const colors = theme === 'construction' ? this.constructionColors : {};
+    const colors = theme === 'construction' ? this.constructionColors : {
+      primary: '#3b82f6',
+      secondary: '#1d4ed8',
+      accent: '#64748b',
+      background: '#f8fafc',
+      text: '#1f2937'
+    };
 
     return `
       <div class="comparison-chart" style="width: 100%; max-width: ${width}px; margin: 0 auto; padding: 20px;">
@@ -145,7 +169,13 @@ export class ChartGenerator {
 
   generateProcessFlow(data: ChartData, options: ChartOptions = {}): string {
     const { width = 800, theme = 'construction' } = options;
-    const colors = theme === 'construction' ? this.constructionColors : {};
+    const colors = theme === 'construction' ? this.constructionColors : {
+      primary: '#3b82f6',
+      secondary: '#1d4ed8',
+      accent: '#64748b',
+      background: '#f8fafc',
+      text: '#1f2937'
+    };
 
     return `
       <div class="process-flow" style="width: 100%; max-width: ${width}px; margin: 0 auto; padding: 20px;">
