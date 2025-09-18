@@ -1,0 +1,90 @@
+{
+  "charts": [
+    {
+      "type": "comparison",
+      "title": "Traditional vs. Investment Mindset: Handling Change Orders",
+      "placement": "mid-article",
+      "value": "This bar chart visually contrasts the key differences between the traditional reactive approach and the proposed investment mindset for handling change orders. It highlights the contrasting outcomes in terms of profitability, client satisfaction, and time efficiency, making the core argument of the blog post immediately clear.",
+      "data": [
+        {
+          "label": "Traditional Mindset: Profitability",
+          "value": "Low",
+          "description": "Focus on minimizing costs, leading to potential losses."
+        },
+        {
+          "label": "Investment Mindset: Profitability",
+          "value": "High",
+          "description": "Focus on maximizing value and upselling, leading to increased revenue."
+        },
+        {
+          "label": "Traditional Mindset: Client Satisfaction",
+          "value": "Low",
+          "description": "Frustration, delays, and disputes lead to dissatisfaction."
+        },
+        {
+          "label": "Investment Mindset: Client Satisfaction",
+          "value": "High",
+          "description": "Improved communication and collaboration lead to stronger relationships."
+        },
+        {
+          "label": "Traditional Mindset: Time Efficiency",
+          "value": "Low",
+          "description": "Hours spent on disputes and rework reduce efficiency."
+        },
+        {
+          "label": "Investment Mindset: Time Efficiency",
+          "value": "High",
+          "description": "Proactive planning and streamlined processes save time."
+        }
+      ]
+    },
+    {
+      "type": "process-flow",
+      "title": "Change Order Workflow: Reactive vs. Proactive",
+      "placement": "late",
+      "value": "This process-flow chart visually demonstrates the steps involved in handling change orders under both the traditional reactive approach and the proposed investment mindset.  It showcases the differences in process efficiency and decision-making, making the contrast between approaches more concrete and easier to understand.",
+      "data": [
+        {
+          "label": "Reactive: Change Request Received",
+          "value": 1,
+          "description": "Change request submitted; often late in the project."
+        },
+        {
+          "label": "Reactive: Cost Assessment (often contentious)",
+          "value": 2,
+          "description": "Time-consuming negotiation, potential for disputes."
+        },
+        {
+          "label": "Reactive: Approval Delays",
+          "value": 3,
+          "description": "Slow approval process, project delays and added costs."
+        },
+        {
+          "label": "Reactive: Implementation (with resentment)",
+          "value": 4,
+          "description": "Work performed with potential for further issues and delays."
+        },
+        {
+          "label": "Proactive: Anticipate Potential Changes",
+          "value": 1,
+          "description": "Early identification of potential changes and proactive discussions."
+        },
+        {
+          "label": "Proactive: Collaborative Planning",
+          "value": 2,
+          "description": "Jointly evaluate options, explore potential upselling."
+        },
+        {
+          "label": "Proactive: Transparent Pricing",
+          "value": 3,
+          "description": "Clear and upfront pricing structure, minimal disputes."
+        },
+        {
+          "label": "Proactive: Efficient Implementation",
+          "value": 4,
+          "description": "Streamlined process, minimal delays and increased profitability."
+        }
+      ]
+    }
+  ]
+}

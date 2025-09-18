@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><script src="https://cdn. jsdelivr. net/npm/chart. js"></script> - Construction Slides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+            background: #FEFCE8;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        .header {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 20px 24px;
+            border-bottom: 2px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background: #FF6600;
+            border: 1px solid #FFFFFF;
+        }
+        
+        .status-text {
+            color: #FF6600;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .slide-number {
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: bold;
+            margin-left: 16px;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .title-card, .content-card, .cta-card {
+            background: #FFFFFF;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0px 0px black;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .title-header, .section-header, .cta-header {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 20px 24px;
+            margin: -50px -50px 30px -50px;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .post-type {
+            color: #FF6600;
+        }
+        
+        .main-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .subtitle, .tagline {
+            font-size: 16px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            margin-bottom: 28px;
+        }
+        
+        .points-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .point-marker {
+            width: 22px;
+            height: 22px;
+            background: #FF6600;
+            border: 2px solid #000000;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 4px;
+        }
+        
+        .point-text {
+            font-size: 18px;
+            color: #000000;
+            line-height: 1.4;
+            font-weight: normal;
+        }
+        
+        .construction-elements {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .element {
+            width: 50px;
+            height: 50px;
+            background: #FF6600;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+        }
+        
+        .brand-title {
+            font-size: 40px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .cta-button {
+            background: #FF6600;
+            color: #000000;
+            border: 2px solid black;
+            padding: 14px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            box-shadow: 6px 6px 0px 0px black;
+            transform: translate(-2px, -2px);
+        }
+        
+        .contact-info {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #000000;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-label {
+            font-size: 12px;
+            color: #FF6600;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .contact-value {
+            font-size: 14px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer {
+            background: #FFFFFF;
+            border-top: 2px solid black;
+            padding: 16px 24px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .construction-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0.05;
+        }
+        
+        .grid-line {
+            position: absolute;
+            background: #000000;
+        }
+        
+        .grid-vertical { width: 1px; height: 100%; left: 25%; }
+        .grid-vertical-2 { width: 1px; height: 100%; left: 50%; }
+        .grid-vertical-3 { width: 1px; height: 100%; left: 75%; }
+        .grid-horizontal { height: 1px; width: 100%; top: 25%; }
+        .grid-horizontal-2 { height: 1px; width: 100%; top: 50%; }
+        .grid-horizontal-3 { height: 1px; width: 100%; top: 75%; }
+        
+        /* Navigation Controls */
+        .navigation {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFFFFF;
+            border: 2px solid black;
+            box-shadow: 4px 4px 0px 0px black;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            z-index: 1000;
+        }
+        
+        .nav-button {
+            background: #FF6600;
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 7px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: ui-monospace, SFMono-Regular, monospace;
+        }
+        
+        .nav-button:hover:not(:disabled) {
+            box-shadow: 3px 3px 0px 0px black;
+            transform: translate(-1px, -1px);
+        }
+        
+        .nav-button:disabled {
+            background: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        .slide-counter {
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            padding: 0 14px;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #000000;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FF6600;
+            transition: width 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .keyboard-hint {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            opacity: 0.7;
+        }
+        
+        @media print {
+            body { margin: 0; overflow: visible; }
+            .slide { 
+                display: flex !important; 
+                position: static !important; 
+                page-break-after: always; 
+                height: 100vh;
+            }
+            .slide:last-child { page-break-after: avoid; }
+            .navigation, .keyboard-hint, .progress-bar { display: none !important; }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title { font-size: 28px; }
+            .section-title { font-size: 22px; }
+            .point-text { font-size: 16px; }
+            .construction-elements { display: none; }
+            .main-content { padding: 30px 40px; }
+            .title-card, .content-card, .cta-card { padding: 30px; }
+            .navigation { bottom: 10px; padding: 10px 14px; }
+            .nav-button { padding: 5px 10px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="keyboard-hint">Use ← → arrow keys or buttons to navigate</div>
+    
+    <div class="slide-container">
+        
+      <div class="slide" data-slide="1">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION HQ NETWORK</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">SECURE</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="title-card">
+            <div class="title-header">
+              <span>CONSTRUCTION BLUEPRINT</span>
+              <span class="post-type">TYPE: POST</span>
+            </div>
+            <h1 class="main-title"><script src="https://cdn. jsdelivr. net/npm/chart. js"></script></h1>
+            <p class="subtitle">// CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //</p>
+          </div>
+          
+          <div class="construction-elements">
+            <div class="element">001</div>
+            <div class="element">ACTIVE</div>
+            <div class="element">LOADED</div>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // LOWEDA CONSTRUCTION BLOG - CONSTRUCTION PROTOCOLS VERIFIED //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="2">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[002]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">THE PROBLEM WITH REACTIVE CHANGE ORDER MANAGEMENT</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">In traditional construction project management, change orders are treated as unwelcome interruptions and deviations from the initial plan, which immediately creates friction and project delays.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">This reactive mindset focuses narrowly on minimizing the immediate cost of the change rather than exploring the potential value it could add to the project, leading to significant missed revenue opportunities.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Handling changes reactively consumes countless unbillable administrative hours in arguments and negotiations, ultimately fostering resentment between the client and contractor.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="3">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[003]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">IMPACT & FINANCIAL CONSEQUENCES OF THE TRADITIONAL APPROACH</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">The reactive approach directly erodes profit margins through uncompensated administrative overhead, project delays, liquidated damages, and costly disputes over scope alterations.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">It damages long-term client relationships by creating an adversarial environment, thereby jeopardizing the potential for high-margin repeat business and valuable industry referrals.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Failing to properly price and document changes leads to profit leakage, as contractors often absorb the costs of small changes to avoid conflict, which accumulates over the project lifecycle.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="4">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[004]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">ROOT CAUSE ANALYSIS: WHY THE TRADITIONAL MINDSET PERSISTS</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">The primary cause is the failure to establish a proactive change management process pre-construction, which results in ambiguity and conflict when scope changes inevitably arise.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Pricing models based solely on the direct cost of labor and materials, rather than the total value delivered, reinforce the view of change orders as a low-margin burden.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">A cultural emphasis on adhering strictly to the original plan, without flexibility for value-adding enhancements, prevents teams from seeing changes as strategic opportunities.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="5">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[005]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">STRATEGIC FRAMEWORK: ADOPTING THE INVESTMENT MINDSET</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Reframe every change order not as an unforeseen cost, but as an opportunity for a mutual investment that enhances the project's final value for the client.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">This proactive paradigm shift treats the project as a dynamic asset, enabling contractors to add significant value for the client while simultaneously increasing project profitability.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">The core principle is to move from a cost-minimization focus to a value-maximization strategy, transforming potential liabilities into profitable assets and strengthening client partnerships.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="6">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[006]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">IMPLEMENTATION METHODOLOGY: A PROACTIVE 6-STEP PROCESS</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Establish a structured workflow: 1) Formal Client Request, 2) Impact Assessment, 3) Value-Based Proposal, 4) Written Client Approval, 5) Controlled Implementation, and 6) Post-Change Review.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">This formalized process ensures absolute clarity, accountability, and proper documentation at every stage, effectively preventing scope creep and disputes before they can escalate.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">By turning a chaotic reaction into a managed, profitable transaction, this methodology builds client confidence and protects your firm’s financial interests.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="7">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[007]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">TECHNOLOGY INTEGRATION FOR CHANGE MANAGEMENT EFFICIENCY</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Leverage modern project management software to automate the entire change order lifecycle, from initial request submission and tracking to final invoicing and documentation archiving.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Utilize collaborative online client portals to provide all stakeholders with real-time updates and maintain a transparent, single source of truth for all communications and approvals.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Employ digital tools to streamline the generation of change order proposals, ensuring consistency in pricing and presentation while reducing administrative overhead and response times.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="8">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[008]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">DOCUMENTATION PROTOCOLS & CREATING AN AUDIT TRAIL</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Mandate meticulous documentation for every change, clearly defining the revised scope of work, specifying all inclusions and exclusions, and detailing the impact on schedule and budget.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">This practice creates an indisputable audit trail that protects your firm from financial disputes, ensures billing accuracy, and serves as a legal safeguard in case of litigation.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Standardize change order forms across all projects to ensure all critical information is captured consistently, leaving no room for misinterpretation by any stakeholder.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="9">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[009]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">STAKEHOLDER ALIGNMENT & COMMUNICATION STRATEGY</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Define and agree upon a clear communication protocol and change management process with the client during the contract negotiation phase, before the project begins.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Proactively inform clients of the cost, schedule, and value implications of their requests, providing alternative solutions to build trust and position your firm as an expert partner.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Maintain an open dialogue throughout the change process, ensuring the client feels informed and valued, which makes them more receptive to viewing changes as positive investments.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="10">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[010]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">RISK MITIGATION THROUGH VALUE-BASED PRICING</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Transition from a cost-plus pricing model to a value-based strategy that accounts for the improved functionality, aesthetics, or marketability the change provides the client.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">This approach mitigates the risk of under-pricing by capturing the full value of your expertise and the enhancement itself, framing the cost as a strategic project improvement.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Clearly articulate the added value in your proposals, helping clients understand the return on investment for their requested change and justifying the premium price point.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="11">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[011]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">TURNING CHANGE ORDERS INTO UPSELLING OPPORTUNITIES</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Train project managers to analyze the root need behind a client's change request to identify opportunities for upselling more comprehensive upgrades or related services.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">For example, a request to change one type of lighting fixture can be leveraged into a proposal for a full smart-lighting control system, dramatically increasing the change order's value.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Proactively presenting solutions that exceed the client's initial request demonstrates deep project understanding and a commitment to delivering a superior final product.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="12">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[012]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">COMMON PITFALLS & PREVENTION STRATEGIES</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Avoid the common pitfall of proceeding with verbal approvals by instituting a strict policy that requires written, formal sign-off on all change orders before any work commences.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Prevent client sticker shock and disputes by providing detailed, value-focused proposals upfront, rather than delivering a surprise invoice after the work is already completed.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Guard against scope creep by ensuring every change order document is highly specific about what is included and, just as importantly, what is not included in the new scope of work.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="13">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[013]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">BEST PRACTICES & KEY RECOMMENDATIONS</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Build strong client partnerships by demonstrating a genuine commitment to their project's success, which fosters the trust needed to present change orders as valuable investments.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Continuously refine your change order management process after each project by reviewing documentation, timelines, and outcomes to identify areas for future improvement and efficiency gains.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Ensure all change orders are priced to include not just direct costs, but also the associated administrative overhead, project management time, and a healthy profit margin.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="14">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[014]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">ACTIONABLE NEXT STEPS FOR IMPLEMENTATION</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">This week, convene your project management team to draft and standardize a new change order request form and a formal, multi-step approval process workflow.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Schedule mandatory training on value-based pricing principles and consultative selling techniques to shift the team's focus from merely accommodating requests to creating value.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">Select a pilot project to implement the new investment-minded change order process and technology, gathering data and feedback to refine the system before a company-wide rollout.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="15">
+        <header class="header">
+          <div class="header-left">CONSTRUCTION PROTOCOLS</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">VERIFIED</div>
+            <div class="slide-number">[015]</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="content-card">
+            <div class="section-header">
+              <span>CONSTRUCTION INTEL</span>
+              <span style="color: #FF6600;">CLASSIFIED</span>
+            </div>
+            <h1 class="section-title">CULTIVATING LONG-TERM SUCCESS & A WIN-WIN CULTURE</h1>
+            <ul class="points-list">
+              
+                <li class="point-item">
+                  <div class="point-marker">1</div>
+                  <div class="point-text">Embed the investment mindset into your company culture through ongoing training, and by rewarding project managers who successfully increase project profitability via strategic change orders.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">2</div>
+                  <div class="point-text">Foster a client-centric approach where your team is consistently viewed as a strategic partner who is fundamentally invested in delivering maximum project value and success.</div>
+                </li>
+              
+                <li class="point-item">
+                  <div class="point-marker">3</div>
+                  <div class="point-text">By transforming change orders into opportunities, you not only boost profit margins but also cultivate more fulfilling, collaborative, and successful projects for everyone involved.</div>
+                </li>
+              
+            </ul>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM //
+          </div>
+        </footer>
+      </div>
+    
+
+      <div class="slide" data-slide="end">
+        <div class="construction-grid">
+          <div class="grid-line grid-vertical"></div>
+          <div class="grid-line grid-vertical-2"></div>
+          <div class="grid-line grid-vertical-3"></div>
+          <div class="grid-line grid-horizontal"></div>
+          <div class="grid-line grid-horizontal-2"></div>
+          <div class="grid-line grid-horizontal-3"></div>
+        </div>
+        
+        <header class="header">
+          <div class="header-left">CONSTRUCTION BLUEPRINT COMPLETE</div>
+          <div class="header-right">
+            <div class="status-indicator"></div>
+            <div class="status-text">SUCCESS</div>
+          </div>
+        </header>
+        
+        <main class="main-content">
+          <div class="cta-card">
+            <div class="cta-header">
+              <span>CONSTRUCTION MANAGEMENT HQ</span>
+              <span style="color: #FF6600;">MISSION COMPLETE</span>
+            </div>
+            <h1 class="brand-title">LOWEDA<br/>CONSTRUCTION<br/>BLOG</h1>
+            <p class="tagline">BUILD BETTER. MANAGE SMARTER.</p>
+            
+            <div class="cta-buttons">
+              <a href="#" class="cta-button" onclick="window.open('/', '_blank')">VISIT CONSTRUCTION HQ &gt;&gt;</a>
+              <a href="#" class="cta-button" onclick="window.open('/resources', '_blank')">ACCESS RESOURCES &gt;&gt;</a>
+            </div>
+            
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-label">SYSTEM STATUS</div>
+                <div class="contact-value">OPERATIONAL</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">ACCESS LEVEL</div>
+                <div class="contact-value">AUTHORIZED</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">DATA INTEGRITY</div>
+                <div class="contact-value">VERIFIED</div>
+              </div>
+            </div>
+          </div>
+        </main>
+        
+        <footer class="footer">
+          <div class="footer-text">
+            // CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM 2024 //
+          </div>
+        </footer>
+      </div>
+    
+    </div>
+    
+    <nav class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="previousSlide()">‹ PREV</button>
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">16</span>
+        </div>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">NEXT ›</button>
+    </nav>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = 16;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            document.getElementById('currentSlide').textContent = index + 1;
+            const progress = ((index + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+        
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        }
+        
+        function previousSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                currentSlideIndex = 0;
+                showSlide(currentSlideIndex);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                currentSlideIndex = totalSlides - 1;
+                showSlide(currentSlideIndex);
+            }
+        });
+        
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+        }
+        
+        showSlide(0);
+        
+        setTimeout(() => {
+            const hint = document.querySelector('.keyboard-hint');
+            if (hint) hint.style.opacity = '0.3';
+        }, 5000);
+    </script>
+</body>
+</html>
