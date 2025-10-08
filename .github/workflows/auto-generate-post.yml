@@ -233,10 +233,10 @@ jobs:
           echo "  - Build: Success"
           echo ""
           echo "🎧 Podcast features:"
-          echo "  - Construction industry conversation format"
+          echo "  - Data and SaaS conversation format"
           echo "  - Direct, no-nonsense communication style"
           echo "  - Estimated 4-7 minute listening time"
-          echo "  - Professional British accents (if audio generated)"
+          echo "  - Professional accents (if audio generated)"
           
       - name: Handle generation failure
         if: failure() && steps.check-calendar.outputs.has_post == 'true'
