@@ -44,6 +44,12 @@ function extractExcerpt(content: string): string {
 
 export function getAllPosts(): Post[] {
   const postsDirectory = path.join(process.cwd(), 'content')
+
+  // Check if content directory exists, if not return empty array
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+
   const filenames = fs.readdirSync(postsDirectory)
   const titleMap = getContentCalendar()
   
