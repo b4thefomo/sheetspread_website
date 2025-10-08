@@ -30,8 +30,15 @@ export default function PostPage({ params }: PostPageProps) {
       <header className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-4 mt-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-[#FF6600] hover:bg-[#FF6600] hover:text-black px-3 py-2 border-2 border-[#FF6600] text-sm font-bold uppercase tracking-wider transition-colors duration-200">
-              &lt;&lt; RETURN TO SHEETSPREAD HQ
+            <Link href="/" className="flex items-center gap-2 text-[#FF6600] hover:bg-[#FF6600] hover:text-black px-3 py-2 border-2 border-[#FF6600] text-sm font-bold uppercase tracking-wider transition-colors duration-200">
+              <Image
+                src="/logo.png"
+                alt="SheetSpread Logo"
+                width={24}
+                height={24}
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
+              <span>&lt;&lt; RETURN TO SHEETSPREAD HQ</span>
             </Link>
             <div className="flex items-center gap-2 text-xs uppercase tracking-wider">
               <div className="w-2 h-2 bg-[#FF6600] border border-black"></div>

@@ -17,9 +17,18 @@ export default function Home() {
       <header className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] mx-2 sm:mx-4 mt-4">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="flex-1 min-w-0">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black uppercase tracking-wider leading-tight">SHEETSPREAD BLOG</h1>
-              <p className="text-black mt-1 sm:mt-2 uppercase text-xs sm:text-sm tracking-wide">// DATA AUTOMATION & SALESFORCE INTEGRATION SYSTEM</p>
+            <div className="flex-1 min-w-0 flex items-center gap-3 sm:gap-4">
+              <Image
+                src="/logo.png"
+                alt="SheetSpread Logo"
+                width={48}
+                height={48}
+                className="w-8 h-8 sm:w-12 sm:h-12"
+              />
+              <div>
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black uppercase tracking-wider leading-tight">SHEETSPREAD BLOG</h1>
+                <p className="text-black mt-1 sm:mt-2 uppercase text-xs sm:text-sm tracking-wide">// DATA AUTOMATION & SALESFORCE INTEGRATION SYSTEM</p>
+              </div>
             </div>
             <div className="flex-shrink-0">
               <ConstructionNavbar />

@@ -3,6 +3,9 @@ import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
   title: 'SheetSpread Blog',
   description: 'Google Sheets Automation, Salesforce Integration, and AI-Powered Data Reporting',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
