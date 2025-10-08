@@ -38,7 +38,9 @@ async function createNextPost() {
 
     console.log('✍️  Generating blog content...');
     
-    const contentPrompt = `As an copywriting expert in the style of david ogilvy, write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective. 
+    const contentPrompt = `As a copywriting expert in the style of David Ogilvy, write a comprehensive blog post about "${nextPost.title}" from a ${nextPost.perspective || 'general'} perspective.
+
+    This is for SheetSpread - a Google Sheets add-on that enables Salesforce integration, automated reporting, AI-powered insights, and data automation.
 
     CRITICAL FORMAT REQUIREMENTS:
     - Start with the title as plain text (no markdown heading)
@@ -52,18 +54,19 @@ async function createNextPost() {
     - Add internal linking placeholders: {{INTERNAL_LINK_1}}, {{INTERNAL_LINK_2}}
     - Include a <p><b>Related Articles</b></p> section before the conclusion with placeholder links
     - End with a <p><b>Conclusion</b></p> section
-    - Write in professional, authoritative tone
-    - Include specific examples, tips, and best practices
+    - Write in professional, authoritative tone for data professionals and business users
+    - Include specific examples related to Salesforce, Google Sheets, data automation
     - Make it comprehensive (2000+ words)
-    
+
     IMPORTANT REMINDERS:
     - Post thumbnails are automatically displayed by the blog layout
     - Downloadable slides with key takeaways will be automatically added during processing
     - DO NOT add any image references in the post body content
-    
+
     Topic: ${nextPost.title}
     Perspective: ${nextPost.perspective || 'general'}
-    
+    Context: SheetSpread is a Google Apps Script add-on for data automation, Salesforce integration, and AI-powered reporting
+
     Write the complete blog post now:`;
 
     const contentResult = await model.generateContent(contentPrompt);
@@ -77,14 +80,14 @@ async function createNextPost() {
     // Generate image
     console.log('\n🎨 Generating image...');
     
-    const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors. 
-    Style: Simple cartoon character with exaggerated features, round eyes, big smile, purple curly hair. 
-    Character holding a magnifying glass examining documents. 
-    Background: Solid bright green or blue. 
-    Floating elements: dollar signs, clocks, gears, construction crane, checklist icons, warning triangles, sparkles, and motion lines. 
-    Bold flat colors: yellow, orange, pink, purple, blue. No gradients, no shadows. 
-    Style similar to modern editorial illustrations, playful and approachable. 
-    IMPORTANT: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO TITLES, NO NUMBERS anywhere in the image.`;
+    const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors.
+    Style: Simple cartoon character with exaggerated features, round eyes, big smile, working with data and spreadsheets.
+    Character sitting at desk with laptop or tablet showing spreadsheet/data visualizations, or character interacting with floating spreadsheet cells.
+    Background: Solid bright green, blue, or purple.
+    Floating elements: spreadsheet cells, data charts, Salesforce cloud logo, sync arrows, calendar icons, email icons, lock/security symbols, lightning bolts representing data sync, gear icons, checkmarks, sparkles, and motion lines.
+    Bold flat colors: green, blue, purple, teal, orange. No gradients, no shadows.
+    Style similar to modern tech/SaaS editorial illustrations, playful and approachable, data-focused.
+    CRITICAL: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO TITLES, NO NUMBERS anywhere in the image.`;
 
     const ai = new GoogleGenAI({ apiKey: apiKey });
     const imageResponse = await ai.models.generateImages({

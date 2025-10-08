@@ -35,14 +35,14 @@ async function generateSingleImage() {
     console.log(`   Perspective: ${testPost.perspective || 'general'}`);
     
     // Create playful, simple prompt based on title
-    const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors. 
-    Style: Simple cartoon character with exaggerated features, round eyes, big smile. 
-    Character should reflect the topic with appropriate props and setting. 
-    Background: Solid bright green or blue. 
-    Floating elements that match the topic/industry being discussed, checklist icons, warning triangles, sparkles, and motion lines. 
-    Bold flat colors: yellow, orange, pink, purple, blue, red. No gradients, no shadows. 
-    Style similar to modern editorial illustrations, playful and approachable. 
-    CRITICAL: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO TITLES anywhere in the image.`;
+    const prompt = `Cartoon illustration with thick black outlines and flat vibrant colors.
+    Style: Simple cartoon character with exaggerated features, round eyes, big smile, working with data and spreadsheets.
+    Character sitting at desk with laptop or tablet showing spreadsheet/data visualizations.
+    Background: Solid bright green, blue, or purple.
+    Floating elements: spreadsheet cells, data charts, Salesforce cloud logo, sync arrows, calendar icons, email icons, lock/security symbols, lightning bolts representing data sync, sparkles, and motion lines.
+    Bold flat colors: green, blue, purple, teal, orange. No gradients, no shadows.
+    Style similar to modern tech/SaaS editorial illustrations, playful and approachable.
+    IMPORTANT: This is a visual illustration only - absolutely NO TEXT, NO WORDS, NO LETTERS, NO TITLES, NO NUMBERS anywhere in the image.`;
 
     console.log(`\n🎨 Prompt: ${prompt.slice(0, 150)}...\n`);
 

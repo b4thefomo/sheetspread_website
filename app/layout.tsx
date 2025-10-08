@@ -1,8 +1,8 @@
 import './globals.css'
 import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
-  title: 'SailsMaps Blog',
-  description: 'Construction Blog',
+  title: 'SheetSpread Blog',
+  description: 'Google Sheets Automation, Salesforce Integration, and AI-Powered Data Reporting',
 }
 
 export default function RootLayout({

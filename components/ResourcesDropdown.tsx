@@ -25,26 +25,26 @@ export default function ConstructionNavbar() {
         {isPostsOpen && (
           <div className="absolute right-0 mt-2 w-56 sm:w-64 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] z-50">
             <div className="bg-black text-white p-2 uppercase text-xs tracking-wider">
-              <span>CONSTRUCTION POSTS</span>
+              <span>SHEETSPREAD BLOG</span>
               <span className="float-right text-[#FF6600]">ACTIVE</span>
             </div>
             <div className="p-2">
               <Link href="/" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider border-b border-black transition-colors">
                 [001] ALL POSTS
               </Link>
-              <Link href="/posts/post-8" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider border-b border-black transition-colors">
-                [002] PROJECT MANAGER TIPS
+              <Link href="/posts/post-1" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider border-b border-black transition-colors">
+                [002] GETTING STARTED
               </Link>
-              <Link href="/posts/post-9" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider transition-colors">
-                [003] SUPPLIER MANAGEMENT
+              <Link href="/posts/post-2" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider transition-colors">
+                [003] SALESFORCE INTEGRATION
               </Link>
             </div>
           </div>
         )}
       </div>
 
-      {/* Resources Dropdown */}
-      <div className="relative">
+      {/* Resources Dropdown - Hidden for now */}
+      {/* <div className="relative">
         <button
           onClick={() => setIsResourcesOpen(!isResourcesOpen)}
           onBlur={() => setTimeout(() => setIsResourcesOpen(false), 200)}
@@ -54,30 +54,24 @@ export default function ConstructionNavbar() {
           <span className="sm:hidden">RES</span>
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6600] border border-black"></div>
         </button>
-        
+
         {isResourcesOpen && (
           <div className="absolute right-0 mt-2 w-56 sm:w-64 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] z-50">
             <div className="bg-black text-white p-2 uppercase text-xs tracking-wider">
-              <span>CONSTRUCTION RESOURCES</span>
+              <span>DATA RESOURCES</span>
               <span className="float-right text-[#FF6600]">SECURE</span>
             </div>
             <div className="p-2">
               <Link href="/resources" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider border-b border-black transition-colors">
                 [001] ALL RESOURCES
               </Link>
-              <Link href="/resources/infographics" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider border-b border-black transition-colors">
-                [002] CONSTRUCTION BLUEPRINTS
-              </Link>
-              <Link href="/resources/change-order-management" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider transition-colors">
-                [003] CONSTRUCTION MANUAL
-              </Link>
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
-      {/* Tools Dropdown */}
-      <div className="relative">
+      {/* Tools Dropdown - Hidden for now */}
+      {/* <div className="relative">
         <button
           onClick={() => setIsToolsOpen(!isToolsOpen)}
           onBlur={() => setTimeout(() => setIsToolsOpen(false), 200)}
@@ -86,21 +80,21 @@ export default function ConstructionNavbar() {
           TOOLS
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6600] border border-black"></div>
         </button>
-        
+
         {isToolsOpen && (
           <div className="absolute right-0 mt-2 w-56 sm:w-64 bg-white border-2 border-black shadow-[4px_4px_0px_0px_black] z-50">
             <div className="bg-black text-white p-2 uppercase text-xs tracking-wider">
-              <span>CONSTRUCTION TOOLS</span>
+              <span>DATA TOOLS</span>
               <span className="float-right text-[#FF6600]">READY</span>
             </div>
             <div className="p-2">
-              <Link href="/change-order-quiz" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider transition-colors">
-                [001] CONSTRUCTION ASSESSMENT
+              <Link href="/tools" className="block px-3 py-2 text-xs text-black hover:bg-[#FF6600] hover:text-black uppercase tracking-wider transition-colors">
+                [001] COMING SOON
               </Link>
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </nav>
   )
 }

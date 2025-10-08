@@ -18,8 +18,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex-1 min-w-0">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black uppercase tracking-wider leading-tight">LOWEDA CONSTRUCTION BLOG</h1>
-              <p className="text-black mt-1 sm:mt-2 uppercase text-xs sm:text-sm tracking-wide">// CONSTRUCTION MANAGEMENT INTELLIGENCE SYSTEM</p>
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black uppercase tracking-wider leading-tight">SHEETSPREAD BLOG</h1>
+              <p className="text-black mt-1 sm:mt-2 uppercase text-xs sm:text-sm tracking-wide">// DATA AUTOMATION & SALESFORCE INTEGRATION SYSTEM</p>
             </div>
             <div className="flex-shrink-0">
               <ConstructionNavbar />
@@ -35,7 +35,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs">
             <span className="flex items-center gap-1 sm:gap-2">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6600] border border-black"></div>
-              <span className="hidden sm:inline">CONSTRUCTION PROTOCOLS</span>
+              <span className="hidden sm:inline">DATA SYNC PROTOCOLS</span>
               <span className="sm:hidden">PROTOCOLS</span>
             </span>
             <span>POSTS: {String(posts.length).padStart(2, '0')}</span>
@@ -101,10 +101,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6">
           <div className="text-center">
             <p className="text-black text-xs uppercase tracking-wider mb-2">
-              // CONSTRUCTION HQ TERMINAL 2024.12.07 //
+              // SHEETSPREAD DATA TERMINAL 2024.12.07 //
             </p>
             <p className="text-black text-xs leading-relaxed">
-              COPYRIGHT CONSTRUCTION HQ NETWORK - ALL BLUEPRINTS SECURED
+              COPYRIGHT SHEETSPREAD NETWORK - ALL DATA SECURED
             </p>
           </div>
         </div>
