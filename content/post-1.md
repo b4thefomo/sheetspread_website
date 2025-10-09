@@ -14,19 +14,27 @@ Meet SheetSpread: Your Google Sheets Superpower
 
 <p>Consider this example: a sales manager needs to track the progress of their team against quarterly targets. Manually, this would involve exporting data from Salesforce, cleaning it, and then creating a summary table in Google Sheets. With SheetSpread, the manager can create a custom query that pulls the relevant data directly from Salesforce, automatically updating the report every hour. This saves hours of manual effort and ensures that the report is always up-to-date, enabling the manager to make informed decisions based on real-time data. With SheetSpread, data entry errors also plummet, and version control becomes a far more straightforward process, reducing the risks and headaches associated with traditional, manually maintained reporting.</p>
 
-<p>The possibilities are vast. Create dynamic dashboards that track key performance indicators (KPIs). Generate custom reports tailored to specific business needs. Automate data updates to ensure that your spreadsheets are always current. All without writing a single line of code. {{INTERNAL_LINK_1}}</p>
+<p>The possibilities are vast. Create dynamic dashboards that track key performance indicators (KPIs). Generate custom reports tailored to specific business needs. Automate data updates to ensure that your spreadsheets are always current. All without writing a single line of code.</p>
 
 <p><b>Automated Reporting: From Drudgery to Delight</b></p>
 
 <p>Manual reporting is a time-consuming, error-prone process. SheetSpread’s automated reporting features eliminate this drudgery, allowing you to focus on analyzing the data, not collecting it. Imagine setting up a report once and then having it automatically updated on a schedule, without any manual intervention. This is the reality that SheetSpread offers. Set it and forget it. The result? More time for strategic thinking, improved data accuracy, and faster decision-making.</p>
 
-<p>Think about the monthly marketing report. Traditionally, this involves pulling data from multiple sources (Google Analytics, social media platforms, email marketing platforms), cleaning it, and then compiling it into a single report. With SheetSpread, you can automate this entire process. Connect to your data sources, define your report parameters, and then schedule the report to run automatically every month. The report will be generated and updated automatically, freeing up your time to focus on analyzing the results and developing new marketing strategies. Furthermore, you can create alerts to notify stakeholders when key metrics change significantly, allowing your team to react to trends and opportunities more efficiently. 
-<div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 24px; margin: 24px 0;">
-<h4 style="color: #0891b2; margin: 0 0 12px 0;">📊 Free Resource</h4>
-<h3 style="margin: 0 0 8px 0;"><a href="/resources/change-order-management" style="color: #1f2937; text-decoration: none;">Change Order Management: A Supplier's Perspective</a></h3>
-<p style="color: #6b7280; margin: 0 0 16px 0; font-size: 14px;">Description: Comprehensive guide on managing change orders effectively from a supplier's point of view, including best practices and strategies...</p>
-<a href="/resources/change-order-management" style="background: #0891b2; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 500; display: inline-block;">Download Free Resource →</a>
-</div></p>
+<p>Think about the monthly marketing report. Traditionally, this involves pulling data from multiple sources (Google Analytics, social media platforms, email marketing platforms), cleaning it, and then compiling it into a single report. With SheetSpread, you can automate this entire process. Connect to your data sources, define your report parameters, and then schedule the report to run automatically every month. The report will be generated and updated automatically, freeing up your time to focus on analyzing the results and developing new marketing strategies. Furthermore, you can create alerts to notify stakeholders when key metrics change significantly, allowing your team to react to trends and opportunities more efficiently.</p>
+
+<div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border: 3px solid #FF6600; border-radius: 12px; padding: 28px; margin: 32px 0; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+<h4 style="color: #FF6600; margin: 0 0 16px 0; font-size: 20px; font-weight: bold;">🤔 Do You Need Google Sheets Automation?</h4>
+<p style="color: #FEFCE8; margin: 0 0 20px 0; font-size: 15px;">Take this quick quiz to find out if SheetSpread is right for your workflow:</p>
+<ul style="color: #FEFCE8; margin: 0 0 20px 0; padding-left: 24px; line-height: 1.8;">
+<li>Do you manually export data from Salesforce more than once a week?</li>
+<li>Does your team spend 3+ hours per week on data entry or report generation?</li>
+<li>Are you making decisions based on data that's days or weeks old?</li>
+<li>Do you struggle to combine data from multiple sources?</li>
+<li>Have you experienced data errors from manual copying and pasting?</li>
+</ul>
+<p style="color: #FEFCE8; margin: 0 0 16px 0; font-size: 14px; font-style: italic;"><strong style="color: #FF6600;">If you answered "yes" to 2 or more questions</strong>, automation could save your team 10+ hours per week.</p>
+<a href="/change-order-quiz" style="background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%); color: #0f172a; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">Take the Full Assessment →</a>
+</div>
 
 <p>This is not just about saving time; it's about improving the quality of your insights. By automating the reporting process, you eliminate the risk of human error and ensure that your reports are always accurate and consistent. You can also create more sophisticated reports that combine data from multiple sources, providing a more comprehensive view of your business performance.</p>
 
@@ -34,7 +42,7 @@ Meet SheetSpread: Your Google Sheets Superpower
 
 <p>Data is only valuable if you can extract meaningful insights from it. SheetSpread goes beyond simple reporting by providing AI-powered insights that help you uncover hidden opportunities and make better decisions. Leveraging <a href="https://ai.google.dev/" target="_blank" rel="noopener noreferrer">Google's Gemini AI</a>, SheetSpread can analyze your data to identify trends, patterns, and anomalies that you might otherwise miss. This allows you to make more informed decisions based on a deeper understanding of your data.</p>
 
-<p>For example, SheetSpread’s AI can analyze your sales data to identify which leads are most likely to convert, allowing you to focus your efforts on the most promising prospects. It can also identify potential churn risks by analyzing customer behavior patterns, allowing you to take proactive steps to retain those customers. Furthermore, it can analyze market trends based on external data sources, providing recommendations to optimize your product offerings or pricing strategies. All of this, directly within Google Sheets, making it easier than ever to use AI to drive business value. {{INTERNAL_LINK_2}}</p>
+<p>For example, SheetSpread's AI can analyze your sales data to identify which leads are most likely to convert, allowing you to focus your efforts on the most promising prospects. It can also identify potential churn risks by analyzing customer behavior patterns, allowing you to take proactive steps to retain those customers. Furthermore, it can analyze market trends based on external data sources, providing recommendations to optimize your product offerings or pricing strategies. All of this, directly within Google Sheets, making it easier than ever to use AI to drive business value.</p>
 
 <p>These AI insights are presented in a clear and actionable format, making it easy for you to understand the implications of the data and take appropriate action. You don’t need to be a data scientist to leverage the power of AI. SheetSpread makes it accessible to everyone, empowering you to make smarter decisions based on data-driven insights.</p>
 
@@ -50,8 +58,7 @@ Meet SheetSpread: Your Google Sheets Superpower
 
 <p>Google Sheets is inherently collaborative, and SheetSpread enhances this capability by making it easier to share insights and drive action. With SheetSpread, you can easily share your reports and dashboards with colleagues, allowing them to access the same data and insights. You can also collaborate on reports in real-time, making it easy to work together to analyze the data and develop strategies.</p>
 
-<p>SheetSpread also provides features that make it easier to communicate your insights to others. You can add comments and annotations to your reports, highlighting key findings and providing context. You can also create custom dashboards that are tailored to the specific needs of different stakeholders. This makes it easier for everyone to understand the data and take appropriate action. Furthermore, because SheetSpread works within Google Sheets, it leverages the robust sharing and permission features of Google Workspace, ensuring that your data is secure and accessible only to authorized users. 
-<p><b>💡 Related Resource:</b> <a href="/resources/navigation-charts">Navigation Charts Collection</a> - Description: Essential navigation charts for coastal sailing in various regions...</p></p>
+<p>SheetSpread also provides features that make it easier to communicate your insights to others. You can add comments and annotations to your reports, highlighting key findings and providing context. You can also create custom dashboards that are tailored to the specific needs of different stakeholders. This makes it easier for everyone to understand the data and take appropriate action. Furthermore, because SheetSpread works within Google Sheets, it leverages the robust sharing and permission features of Google Workspace, ensuring that your data is secure and accessible only to authorized users.</p>
 
 <p>The collaborative nature of SheetSpread fosters a data-driven culture within your organization. By making it easier to share insights and collaborate on data analysis, you empower everyone to make better decisions based on data. This leads to improved performance, increased efficiency, and a more engaged workforce.</p>
 
