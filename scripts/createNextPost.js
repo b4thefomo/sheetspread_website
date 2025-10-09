@@ -32,9 +32,8 @@ async function createNextPost() {
     console.log(`   Perspective: ${nextPost.perspective || 'general'}\n`);
 
     // Generate blog content using Gemini
-    const { GoogleGenerativeAI } = require('@google/generative-ai');
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const genAI = new GoogleGenAI({ apiKey: apiKey });
+    const model = 'gemini-2.0-flash-exp';
 
     console.log('✍️  Generating blog content...');
     
@@ -69,8 +68,11 @@ async function createNextPost() {
 
     Write the complete blog post now:`;
 
-    const contentResult = await model.generateContent(contentPrompt);
-    const blogContent = contentResult.response.text();
+    const contentResult = await genAI.models.generateContent({
+      model: model,
+      contents: contentPrompt,
+    });
+    const blogContent = contentResult.text;
 
     // Save markdown file
     const markdownPath = `./content/${nextPost.id}.md`;

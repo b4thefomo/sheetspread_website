@@ -9,7 +9,7 @@
       "metaTitle": "SheetSpread - Google Sheets Automation and Salesforce Integration",
       "metaDescription": "Transform Google Sheets into a powerful data platform with SheetSpread. Automate Salesforce reporting, schedule emails, and generate AI insights without code.",
       "perspective": "product overview",
-      "status": ""
+      "status": "Done"
     },
     {
       "id": "post-2",
@@ -20,7 +20,7 @@
       "metaTitle": "Connect Salesforce to Google Sheets - Complete Guide",
       "metaDescription": "Step-by-step guide to connecting Salesforce to Google Sheets using SheetSpread. No coding required, secure OAuth2 authentication.",
       "perspective": "tutorial",
-      "status": ""
+      "status": "Done"
     },
     {
       "id": "post-3",
