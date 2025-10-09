@@ -214,6 +214,11 @@ The application includes scripts for automated blog post generation:
 - The application extracts the first 200 characters of content as post excerpts
 - Resources section is currently hidden but can be re-enabled by updating ResourcesDropdown.tsx
 
+## AI-Powered Image Library System
+- **Guide**: See [IMAGE_LIBRARY_GUIDE.md](./IMAGE_LIBRARY_GUIDE.md) for complete system documentation
+- **Tasks**: See [IMAGE_LIBRARY_TASKS.md](./IMAGE_LIBRARY_TASKS.md) for implementation checklist
+- **Purpose**: Reusable image library with AI-generated metadata for smart image selection during article generation
+
 ## SheetSpread Roadmap
 
 ### In Progress
