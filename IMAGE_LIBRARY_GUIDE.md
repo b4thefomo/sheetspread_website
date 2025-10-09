@@ -1,5 +1,7 @@
 # AI-Powered Image Library System Guide
 
+**📋 Implementation Tasks**: See detailed task breakdown in [IMAGE_LIBRARY_TASKS.md](./IMAGE_LIBRARY_TASKS.md)
+
 ## Table of Contents
 1. [System Overview](#system-overview)
 2. [Architecture Diagrams](#architecture-diagrams)
